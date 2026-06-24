@@ -72,11 +72,16 @@
     .badge.warn{background:var(--warn-bg);color:var(--warn);border-color:#f0d6a5}
     .badge.danger{background:var(--danger-bg);color:var(--danger);border-color:#f2c3bd}
     .badge.blue{background:var(--brand-2);color:#2c55ad;border-color:#d5e1fc}
-    .score-row{display:flex;align-items:center;justify-content:space-between;padding:13px 15px;gap:12px}
-    .total-score{display:flex;align-items:baseline;gap:4px}
-    .total-score strong{font-size:30px;line-height:1;color:#244da8}
-    .total-score span{font-size:12px;color:var(--muted)}
-    .rank{font-weight:800;color:#72520e}
+    .score-row{display:flex;align-items:center;justify-content:space-between;padding:10px 15px;gap:12px;background:#fbfcff;border-top:1px solid var(--line)}
+    .total-score{display:flex;align-items:baseline;gap:4px;color:var(--muted)}
+    .total-score strong{font-size:18px;line-height:1;color:#526787}
+    .total-score span{font-size:11px;color:var(--muted)}
+    .rank{font-size:12px;font-weight:750;color:#72520e}
+    .summary-labels{padding:11px 15px 4px;display:grid;gap:8px}
+    .summary-label-row{display:flex;align-items:flex-start;gap:7px;flex-wrap:wrap}
+    .summary-label-title{min-width:62px;padding-top:3px;font-size:11px;font-weight:800;color:var(--muted)}
+    .summary-label-row.attention{padding-top:8px;border-top:1px dashed var(--line)}
+    .card-score-note{font-size:11px;color:var(--muted);max-width:230px;text-align:right}
     .card-body{padding:0 15px 12px}
     .score-detail{border-top:1px solid var(--line)}
     .score-detail summary{list-style:none;padding:10px 0;cursor:pointer;font-size:13px;font-weight:700;display:flex;justify-content:space-between}
@@ -129,6 +134,28 @@
     .callout h4{margin:0 0 4px;font-size:14px}
     .callout p{margin:0;color:#4d596c;font-size:13px;white-space:pre-wrap}
     .source-line{margin-top:7px;font-size:12px;color:var(--muted)}
+    .quick-judgement{border-color:#d7e2f7;background:linear-gradient(180deg,#fbfdff,#f7faff)}
+    .quick-status{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding-bottom:13px;margin-bottom:13px;border-bottom:1px solid var(--line)}
+    .quick-status-main{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+    .quick-status-main strong{font-size:16px}
+    .quick-status-note{font-size:12px;color:var(--muted);max-width:620px}
+    .quick-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}
+    .quick-section{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px;min-width:0}
+    .quick-section h4{margin:0 0 8px;font-size:13px}
+    .quick-list{margin:0;padding-left:18px;display:grid;gap:6px;font-size:12px;color:#465267}
+    .quick-list li::marker{color:#7c8ba1}
+    .quick-empty{font-size:12px;color:var(--muted)}
+    .evidence-links{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px}
+    .evidence-links a{font-size:11px;padding:3px 7px;border:1px solid #d6e0f2;border-radius:999px;background:#f7faff;text-decoration:none}
+    .quick-guide{margin-top:12px;border:1px solid #cfdcf4;background:#f1f6ff;border-radius:10px;padding:10px 12px;font-size:13px;color:#405a86}
+    .compare-summary{border-color:#d7e2f7}
+    .compare-summary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    .compare-summary-item{border:1px solid var(--line);border-left:4px solid #7294df;border-radius:11px;padding:11px 12px;background:#fff}
+    .compare-summary-item.ok{border-left-color:#2f9e68;background:#fbfffd}
+    .compare-summary-item.warn{border-left-color:#d58a20;background:#fffdf8}
+    .compare-summary-item.danger{border-left-color:#c84b3d;background:#fffafa}
+    .compare-summary-item h4{margin:0 0 5px;font-size:13px}
+    .compare-summary-item p{margin:0;font-size:12px;color:#4d596c;white-space:pre-wrap}
     .compare-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px;background:#fff}
     .compare-table{border-collapse:separate;border-spacing:0;min-width:100%;width:max-content}
     .compare-table th,.compare-table td{padding:11px 12px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);vertical-align:top;min-width:240px;max-width:320px;word-break:break-word}
@@ -158,6 +185,13 @@
     .extract-status{border:1px solid #d9e4ff;background:#f5f8ff;border-radius:12px;padding:12px;margin:12px 0}
     .extract-status.warn{border-color:#efd49d;background:#fff8e9}
     .extract-status.ok{border-color:#bfe4d2;background:#eef9f4}
+    .ai-config-details{border:1px solid var(--line);background:#fbfcff;border-radius:12px;padding:12px;margin-top:12px}
+    .ai-config-details summary{cursor:pointer;font-weight:800;display:flex;gap:10px;align-items:center;justify-content:space-between}
+    .ai-config-details summary span{font-size:12px;color:var(--muted);font-weight:600}
+    .ai-config-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+    .ai-config-grid .span-2{grid-column:1/-1}
+    .ai-config-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center}
+    .ai-config-note{font-size:12px;color:var(--muted);margin-top:9px}
     .evidence-meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
     .evidence-images{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
     .evidence-images img{width:100%;max-height:230px;object-fit:contain;border:1px solid var(--line);border-radius:10px;background:#f7f9fc}
@@ -217,6 +251,41 @@
     .deployment-step{position:relative;padding:10px 12px 10px 43px;border:1px solid var(--line);border-radius:10px;background:#fff}
     .deployment-step:before{counter-increment:deploy;content:counter(deploy);position:absolute;left:12px;top:10px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--brand);color:#fff;font-size:12px;font-weight:800}
 
+
+    .nav-primary{display:flex;gap:8px;flex-wrap:wrap}
+    .maintenance-nav{position:relative}
+    .maintenance-nav>summary{list-style:none;border:1px solid var(--line);background:#fff;padding:9px 13px;border-radius:10px;font-weight:700;cursor:pointer;white-space:nowrap}
+    .maintenance-nav>summary::-webkit-details-marker{display:none}
+    .maintenance-nav[open]>summary{background:var(--brand-2);border-color:#d7e3ff;color:#244da8}
+    .maintenance-links{position:absolute;right:0;top:calc(100% + 8px);z-index:35;min-width:240px;padding:10px;display:grid;gap:7px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
+    .maintenance-links .nav-btn{text-align:left;width:100%}
+    .workflow-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 16px}
+    .workflow-step{position:relative;border:1px solid var(--line);border-radius:13px;padding:12px 12px 12px 46px;background:#fff;min-height:66px}
+    .workflow-step b{display:block;font-size:14px}.workflow-step span{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+    .workflow-step:before{content:attr(data-step);position:absolute;left:12px;top:14px;width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:#e9eef6;color:#52627a;font-weight:850;font-size:12px}
+    .workflow-step.active{border-color:#b8c9f2;background:#f4f7ff}.workflow-step.active:before{background:var(--brand);color:#fff}
+    .workflow-step.done{border-color:#bfe4d2;background:#eef9f4}.workflow-step.done:before{content:"✓";background:var(--ok);color:#fff}
+    .health-panel{border:1px solid #cad8f6;background:#f8faff}
+    .health-summary{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+    .health-score{font-size:25px;font-weight:850;color:#315bb5}
+    .health-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .health-group{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff}
+    .health-group h4{margin:0 0 7px}.health-group ul{margin:8px 0 0;padding-left:18px;font-size:12px}
+    .health-item{display:flex;gap:6px;align-items:flex-start;margin:5px 0;font-size:12px}
+    .health-item .mark{font-weight:900}.health-item.done .mark{color:var(--ok)}.health-item.missing .mark{color:var(--danger)}
+    .health-impact{margin-top:10px;border-top:1px dashed var(--line);padding-top:9px;font-size:12px;color:#704c14}
+    .copy-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    .copy-option{border:1px solid var(--line);border-radius:11px;padding:12px;background:#fff}
+    .copy-option label{display:flex;gap:8px;align-items:flex-start;font-weight:750}.copy-option p{margin:5px 0 0 25px;font-size:12px;color:var(--muted)}
+    .field-source-stack{display:grid;gap:6px}
+    .field-source-note{font-size:11px;color:var(--muted);line-height:1.4}
+    .consistency-list{display:grid;gap:9px;margin-top:12px}
+    .consistency-item{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start}
+    .consistency-item.danger{border-color:#f2c3bd;background:#fff8f7}.consistency-item.warn{border-color:#efd49d;background:#fffaf0}
+    .consistency-item h4{margin:0 0 4px;font-size:14px}
+    .consistency-meta{font-size:12px;color:var(--muted)}
+    .validation-empty{border:1px dashed #bfe4d2;background:#f4fbf7;border-radius:12px;padding:14px;color:#175f40}
+
     @media(max-width:1100px){
       .filters{grid-template-columns:repeat(3,minmax(0,1fr))}
       .product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -227,6 +296,7 @@
       .hero-score{grid-column:1/-1;display:flex;align-items:center;justify-content:center;gap:18px}
       .header-note{display:none}
       .workspace-grid{grid-template-columns:1fr}
+      .health-groups{grid-template-columns:1fr 1fr}
       .management-grid{grid-template-columns:1fr}
       .extract-field-row{grid-template-columns:150px 1fr 1fr}
       .extract-field-row .confidence-cell,.extract-field-row .confirm-box{grid-column:auto}
@@ -234,8 +304,15 @@
     @media(max-width:720px){
       .header-inner{padding:10px 13px;align-items:flex-start;flex-direction:column}
       .brand{min-width:0}
-      .nav{width:100%;overflow:auto;flex-wrap:nowrap;padding-bottom:2px}
+      .nav{width:100%;overflow:visible;flex-wrap:wrap;padding-bottom:2px}
+      .nav-primary{width:100%;overflow:auto;flex-wrap:nowrap}
       .nav-btn{white-space:nowrap}
+      .maintenance-nav{width:100%}
+      .maintenance-nav>summary{width:100%}
+      .maintenance-links{position:static;min-width:0;margin-top:7px;box-shadow:none}
+      .workflow-steps{grid-template-columns:1fr}
+      .health-groups,.copy-options{grid-template-columns:1fr}
+      .consistency-item{grid-template-columns:1fr}
       main{padding:14px 12px 50px}
       .page-head{flex-direction:column}
       .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -248,6 +325,8 @@
       .detail-title{font-size:21px}
       .detail-meta{grid-template-columns:1fr}
       .detail-grid{grid-template-columns:1fr}
+      .quick-grid,.compare-summary-grid{grid-template-columns:1fr}
+      .quick-status{flex-direction:column}
       .data-list{grid-template-columns:1fr}
       .score-card-row{grid-template-columns:1fr}
       .data-actions{grid-template-columns:1fr}
@@ -257,11 +336,48 @@
       .suggestion-grid{grid-template-columns:1fr}
       .history-card{grid-template-columns:1fr}
       .source-legend{grid-template-columns:1fr 1fr}
+      .ai-config-grid{grid-template-columns:1fr}
+      .ai-config-grid .span-2{grid-column:auto}
       .price-table{display:block;overflow:auto;white-space:nowrap}
       .save-bar{align-items:stretch;flex-direction:column}
       .save-bar .actions{width:100%}
       .save-bar .btn{flex:1}
       .footer{padding:0 12px 25px}
+    }
+
+    .release-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:16px}
+    .release-stat{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fff}
+    .release-stat b{display:block;font-size:25px;color:var(--primary);margin-bottom:4px}
+    .release-table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}
+    .release-table{width:100%;border-collapse:collapse;min-width:900px}
+    .release-table th,.release-table td{padding:10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:13px}
+    .release-table th{background:#f7fafc;position:sticky;top:0;z-index:1}
+    .release-risk-list,.private-boundary-list{display:grid;gap:8px}
+    .release-risk-item{border:1px solid var(--line);border-left:4px solid var(--warning);border-radius:10px;padding:10px;background:#fffaf0}
+    .release-confirm{display:flex;gap:10px;align-items:flex-start;padding:13px;border:1px solid #f2c46d;background:#fff8e8;border-radius:12px}
+    .release-confirm input{margin-top:3px}
+    .evidence-chain{margin-top:12px;border-top:1px dashed var(--line);padding-top:10px}
+    .evidence-chain summary{cursor:pointer;font-weight:700;color:var(--primary);list-style:none;display:flex;align-items:center;gap:7px;min-height:36px}
+    .evidence-chain summary::-webkit-details-marker{display:none}
+    .evidence-chain summary::before{content:'＋';display:inline-flex;width:22px;height:22px;align-items:center;justify-content:center;border-radius:50%;background:#edf4ff}
+    .evidence-chain[open] summary::before{content:'－'}
+    .evidence-chain-list{display:grid;gap:9px;margin-top:9px}
+    .evidence-chain-item{border:1px solid var(--line);border-radius:10px;padding:10px;background:#fafcff}
+    .evidence-chain-item .evidence-chain-meta{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:7px}
+    .evidence-chain-snippet{white-space:pre-wrap;word-break:break-word;background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px;margin-top:7px;font-size:12px;line-height:1.6}
+    .evidence-empty{padding:10px;border:1px dashed var(--line);border-radius:9px;color:var(--muted);background:#fafafa}
+    .ai-test-status{margin-top:10px;border-radius:10px;padding:10px;border:1px solid var(--line);background:#fafafa}
+    .ai-test-status.ok{border-color:#93d6ac;background:#eefaf2}
+    .ai-test-status.warn{border-color:#efc36b;background:#fff9ea}
+    .ai-test-status.danger{border-color:#e99b9b;background:#fff3f3}
+    .alias-help{margin-top:6px;padding:8px;border-radius:8px;background:#f6f8fb;font-size:12px;color:var(--muted)}
+    .feedback-card{max-width:820px;margin:0 auto}
+    .feedback-intro{border:1px solid #cbdaf3;background:#f4f8ff;border-radius:12px;padding:12px;margin-bottom:14px}
+    @media(max-width:760px){
+      .release-summary{grid-template-columns:1fr}
+      .release-confirm{align-items:flex-start}
+      .evidence-chain-item .actions{width:100%}
+      .evidence-chain-item .actions .btn{width:100%}
     }
   </style>
 </head>
@@ -276,14 +392,21 @@
         </div>
       </div>
       <nav class="nav" aria-label="主导航">
-        <button class="nav-btn" data-nav="list">产品资料库</button>
-        <button class="nav-btn" data-nav="add">新增产品</button>
-        <button class="nav-btn" data-nav="compare">产品对比 <span id="compareCount"></span></button>
-        <button class="nav-btn" data-nav="extraction">AI 辅助录入</button>
-        <button class="nav-btn" data-nav="history">抽取历史 <span id="historyCount"></span></button>
-        <button class="nav-btn" data-nav="quality">质量事件 <span id="qualityCount"></span></button>
-        <button class="nav-btn" data-nav="updates">更新队列 <span id="updateCount"></span></button>
-        <button class="nav-btn" data-nav="data">数据管理</button>
+        <div class="nav-primary" aria-label="普通常用功能">
+          <button class="nav-btn" data-nav="list">产品资料库</button>
+          <button class="nav-btn" data-nav="compare">产品对比 <span id="compareCount"></span></button>
+          <button class="nav-btn" data-nav="extraction">录入资料</button>
+        </div>
+        <details class="maintenance-nav">
+          <summary>⚙ 更多维护功能</summary>
+          <div class="maintenance-links" aria-label="维护入口">
+            <button class="nav-btn" data-nav="history">抽取历史 <span id="historyCount"></span></button>
+            <button class="nav-btn" data-nav="quality">质量事件 <span id="qualityCount"></span></button>
+            <button class="nav-btn" data-nav="updates">更新队列 <span id="updateCount"></span></button>
+            <button class="nav-btn" data-nav="data">数据管理</button>
+            <button class="nav-btn" data-nav="aiSettings">AI/OCR 设置</button>
+          </div>
+        </details>
       </nav>
       <div class="header-note">公共资料由 public-data.json 提供<br>本地编辑不会自动公开</div>
     </div>
@@ -314,6 +437,7 @@
     const PUBLIC_META_STORAGE_KEY = "babyFormulaGuide.publicMeta.v1";
     const HIDDEN_PUBLIC_PRODUCTS_KEY = "babyFormulaGuide.hiddenPublicProducts.v1";
     const HIDDEN_PUBLIC_EVENTS_KEY = "babyFormulaGuide.hiddenPublicEvents.v1";
+    const AI_CONFIG_STORAGE_KEY = "babyFormulaGuide.aiOcrConfig.v1";
     const SCORE_DIMENSIONS = [
       { key:"brandProduction", label:"品牌与生产背景", max:15 },
       { key:"milkSource", label:"奶源与乳基原料", max:20 },
@@ -361,6 +485,7 @@
       {value:"review",label:"需复查"}
     ];
     const CONFIDENCE_OPTIONS = ["高","中","低","未识别"];
+    const FIELD_SOURCE_OPTIONS = ["规则抽取","AI OCR","人工填写","未识别"];
     const SOURCE_LEVELS = ["S","A","B","C","D"];
     const QUALITY_EVENT_TYPES = ["官方召回","抽检不合格","官方风险提示","投诉高发","媒体报道","其他"];
     const QUALITY_SEVERITIES = ["轻度","中度","严重","待判断"];
@@ -430,12 +555,17 @@
       },
       hiddenPublicProductIds:loadStringArray(HIDDEN_PUBLIC_PRODUCTS_KEY),
       hiddenPublicEventIds:loadStringArray(HIDDEN_PUBLIC_EVENTS_KEY),
+      aiConfig: loadAIConfig(),
       view: "list",
       editingId: null,
       detailId: null,
       extractionId: null,
       eventEditingId: null,
       updateEditingId: null,
+      copySourceId: null,
+      feedbackProductId: null,
+      aiTestResult: null,
+      consistencyResults: null,
       extractionPrefill: null,
       pendingPriceFromQueue: null,
       compareIds: [],
@@ -611,9 +741,9 @@
       p.versionType = VERSION_TYPES.includes(p.versionType) ? p.versionType : "国产";
       p.stage = STAGES.includes(p.stage) ? p.stage : "其他";
       p.reviewStatus = REVIEW_STATUSES.includes(p.reviewStatus) ? p.reviewStatus : "草稿";
-      p.compliance.versionType = p.versionType;
-      p.compliance.stage = p.stage;
-      p.compliance.ageRange = p.ageRange;
+      p.compliance.versionType = VERSION_TYPES.includes(p.compliance.versionType) ? p.compliance.versionType : p.versionType;
+      p.compliance.stage = STAGES.includes(p.compliance.stage) ? p.compliance.stage : p.stage;
+      p.compliance.ageRange = String(p.compliance.ageRange||"").trim() ? p.compliance.ageRange : p.ageRange;
       SCORE_DIMENSIONS.forEach(d=>{
         p.scores[d.key] = mergeDefaults(p.scores?.[d.key], blankScore(d.max));
         p.scores[d.key].max = d.max;
@@ -647,17 +777,15 @@
       }
     }
 
-    function blankEvidenceRecord(){
+function blankEvidenceRecord(){
       const fields={};
-      EXTRACTION_FIELDS.forEach(def=>{
-        fields[def.path]={value:def.type==="tri"?null:"",evidence:"",confidence:"未识别",needsConfirmation:true,confirmed:false};
-      });
+      EXTRACTION_FIELDS.forEach(def=>{fields[def.path]=blankFieldState(def);});
       return {
         evidenceId:"ev_"+Date.now().toString(36)+"_"+Math.random().toString(36).slice(2,8),
         productId:"",
         targetProductId:"",
         inputType:"webText",
-        inputSource:{fileNames:[],images:[],pastedText:""},
+        inputSource:{fileNames:[],images:[],pastedText:"",aiOcrText:""},
         originalOcrText:"",
         extractedFields:fields,
         extractionResult:deepClone(fields),
@@ -669,12 +797,12 @@
         manuallyConfirmed:false,
         confirmedAt:"",
         notes:"",
-        aiStatus:"待接入 AI 服务",
+        aiStatus:"AI/OCR 未启用或未调用",
         suggestedAdvantages:[],
         suggestedCautions:[]
       };
     }
-    function normalizeEvidenceRecord(raw){
+function normalizeEvidenceRecord(raw){
       const base=blankEvidenceRecord();
       const record=mergeDefaults(raw||{},base);
       record.evidenceId=record.evidenceId||base.evidenceId;
@@ -682,8 +810,16 @@
       record.extractedFields=record.extractedFields||{};
       record.extractionResult=record.extractionResult||deepClone(record.extractedFields);
       EXTRACTION_FIELDS.forEach(def=>{
-        record.extractedFields[def.path]=mergeDefaults(record.extractedFields[def.path],base.extractedFields[def.path]);
-        if(def.type==="tri") record.extractedFields[def.path].value=triValue(record.extractedFields[def.path].value);
+        const field=mergeDefaults(record.extractedFields[def.path],base.extractedFields[def.path]);
+        if(def.type==="tri") field.value=triValue(field.value);
+        if(!FIELD_SOURCE_OPTIONS.includes(field.source)){
+          const hasValue=field.value!==null&&field.value!==undefined&&String(field.value).trim()!=="";
+          field.source=!hasValue?"未识别":/AI\s*\/?\s*OCR/i.test(field.evidence||"")?"AI OCR":"规则抽取";
+          field.sourceDetails=field.sourceDetails||"旧版证据记录兼容推断；请在复核时确认字段来源。";
+        }
+        field.sourceDetails=String(field.sourceDetails||"");
+        field.alternatives=Array.isArray(field.alternatives)?field.alternatives:[];
+        record.extractedFields[def.path]=field;
       });
       record.suggestedAdvantages=Array.isArray(record.suggestedAdvantages)?record.suggestedAdvantages:[];
       record.suggestedCautions=Array.isArray(record.suggestedCautions)?record.suggestedCautions:[];
@@ -934,19 +1070,27 @@
       delete copy.dataOrigin;
       return copy;
     }
+    function sanitizeProductForPublic(product){
+      const copy=stripRuntimeFields(normalizeProduct(product));
+      copy.schemaVersion=5;
+      copy.evidenceIds=[];
+      copy.qualityEvents=[];
+      if(/^data:image\//i.test(String(copy.imageUrl||""))) copy.imageUrl="";
+      copy.ingredients.screenshot="";
+      if(!copy.ingredients.manuallyConfirmed) copy.ingredients=deepClone(blankProduct().ingredients);
+      if(!copy.nutrition.manuallyConfirmed) copy.nutrition=deepClone(blankProduct().nutrition);
+      SCORE_DIMENSIONS.forEach(d=>{
+        if(!copy.scores?.[d.key]?.manuallyConfirmed) copy.scores[d.key]=blankScore(d.max);
+      });
+      copy.advantages=(copy.advantages||[]).filter(x=>x.manuallyConfirmed);
+      copy.cautions=(copy.cautions||[]).filter(x=>x.manuallyConfirmed);
+      copy.priceRecords=(copy.priceRecords||[]).filter(x=>x.manuallyConfirmed);
+      return copy;
+    }
     function buildPublicData(){
       const products=state.products
         .filter(p=>p.reviewStatus==="已确认")
-        .map(p=>{
-          const copy=stripRuntimeFields(normalizeProduct(p));
-          copy.schemaVersion=5;
-          copy.evidenceIds=[];
-          copy.qualityEvents=[];
-          copy.advantages=(copy.advantages||[]).filter(x=>x.manuallyConfirmed);
-          copy.cautions=(copy.cautions||[]).filter(x=>x.manuallyConfirmed);
-          copy.priceRecords=(copy.priceRecords||[]).filter(x=>x.manuallyConfirmed);
-          return copy;
-        });
+        .map(sanitizeProductForPublic);
       const qualityEvents=state.qualityEvents
         .filter(e=>e.auditStatus==="已发布"&&(!isOfficialEventType(e.eventType)||e.verified))
         .map(stripRuntimeFields);
@@ -966,6 +1110,11 @@
       a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
     }
     function exportPublicData(){
+      navigate("releaseCheck");
+    }
+    function confirmPublicDataExport(){
+      const checked=document.getElementById("publicExportConfirm")?.checked;
+      if(!checked){alert("请先勾选二次确认，确认已检查公开范围和风险项。");return;}
       const payload=buildPublicData();
       downloadJson(payload,"public-data.json");
       toast(`公共数据已导出：${payload.products.length} 款产品、${payload.qualityEvents.length} 条事件`);
@@ -1006,6 +1155,219 @@
       sections.push(ratio([yes(p.updatedAt),yes(p.compliance?.updatedAt)]));
       return Math.round(sections.reduce((a,b)=>a+b,0)/sections.length*100);
     }
+    function hasIngredientTable(p){
+      return [p.ingredients?.rawText,p.ingredients?.firstIngredient,p.ingredients?.sourceUrl].some(v=>String(v||"").trim());
+    }
+    function hasNutritionTable(p){
+      const basic=p.nutrition?.basic||{};
+      return [p.nutrition?.rawText,p.nutrition?.sourceUrl,basic.energy,basic.protein,basic.fat,basic.carbohydrate].some(v=>String(v||"").trim());
+    }
+    function attentionTag(label,kind="warn",group="成分关注"){
+      return {label,kind,group};
+    }
+    function getProductAttentionTags(product){
+      const p=product||blankProduct(),tags=[];
+      if(p.ingredients?.hasPalmOil===true) tags.push(attentionTag("含棕榈油"));
+      if(p.ingredients?.hasSucrose===true) tags.push(attentionTag("含白砂糖/蔗糖"));
+      if(p.ingredients?.hasMaltodextrin===true) tags.push(attentionTag("含麦芽糊精"));
+      if(p.ingredients?.hasFlavoring===true) tags.push(attentionTag("含香精香料"));
+      if(p.ingredients?.allLactose===true) tags.push(attentionTag("全乳糖","blue"));
+      if(p.ingredients?.a2BetaCasein===true) tags.push(attentionTag("A2","blue"));
+      if(!hasIngredientTable(p)) tags.push(attentionTag("配料表缺失","danger","资料关注"));
+      if(!hasNutritionTable(p)) tags.push(attentionTag("营养表缺失","danger","资料关注"));
+      return tags;
+    }
+    function getProductBlockingIssues(product){
+      const p=product||blankProduct(),issues=[];
+      const add=(label,kind="warn")=>issues.push({label,kind});
+      const compliance=p.compliance?.verificationStatus;
+      if(compliance==="mismatch") add("注册信息不匹配","danger");
+      else if(compliance==="missing") add("注册资料缺失","danger");
+      else if(compliance!=="verified") add("注册号待核验","warn");
+      if(Number(p.dataCompleteness||0)<50) add("资料完整度低","danger");
+      if(!hasIngredientTable(p)) add("配料表缺失","danger");
+      if(!hasNutritionTable(p)) add("营养表缺失","danger");
+      if(p.qualityEventReview?.status==="需复查") add("质量事件需复查","danger");
+      else if(p.qualityEventReview?.status!=="已检查") add("质量事件未检查","warn");
+      if(p.reviewStatus==="需复查") add("产品资料需复查","danger");
+      else if(p.reviewStatus!=="已确认") add("产品资料未确认","warn");
+      if(["进口国行","海外版","跨境版"].includes(p.versionType)) add("不同版本需分开比较","warn");
+      return issues.filter((item,index,array)=>array.findIndex(x=>x.label===item.label)===index);
+    }
+    function getMissingCriticalFields(product){
+      const p=product||blankProduct(),missing=[];
+      const need=(condition,label)=>{if(condition) missing.push(label);};
+      need(!String(p.productName||"").trim(),"产品名称");
+      need(!String(p.brand||"").trim(),"品牌");
+      need(!String(p.stage||"").trim(),"阶段");
+      need(!String(p.ageRange||"").trim(),"适用月龄");
+      need(!String(p.versionType||"").trim(),"版本类型");
+      need(!String(p.compliance?.formulaRegistrationNo||p.compliance?.chinaRegistrationNo||"").trim(),"注册号/在华注册编号");
+      need(!String(p.compliance?.sourceUrl||"").trim(),"注册核验来源");
+      need(!hasIngredientTable(p),"配料表");
+      need(!String(p.ingredients?.sourceUrl||"").trim(),"配料表来源");
+      need(!p.ingredients?.manuallyConfirmed,"配料表人工确认");
+      need(!hasNutritionTable(p),"营养表");
+      need(!String(p.nutrition?.sourceUrl||"").trim(),"营养表来源");
+      need(!p.nutrition?.manuallyConfirmed,"营养表人工确认");
+      need(p.qualityEventReview?.status!=="已检查","质量事件检查");
+      return [...new Set(missing)];
+    }
+    function getProductQuickStatus(product){
+      const p=product||blankProduct();
+      if(p.compliance?.verificationStatus==="mismatch"){
+        return {label:"不建议作为公开比较依据",kind:"danger",note:"注册信息与产品名称或阶段存在不匹配，需先更正并重新核验。"};
+      }
+      if(p.compliance?.verificationStatus==="pending"){
+        return {label:"注册待核验",kind:"warn",note:"注册号尚未完成核验，比较时需保留版本、阶段和来源信息。"};
+      }
+      if(p.compliance?.verificationStatus==="missing"||Number(p.dataCompleteness||0)<50||!hasIngredientTable(p)||!hasNutritionTable(p)){
+        return {label:"资料不足",kind:"danger",note:"关键公开资料尚未补齐，当前页面只可用于查看缺口，不宜直接下结论。"};
+      }
+      if(p.reviewStatus!=="已确认"||p.qualityEventReview?.status!=="已检查"||!p.ingredients?.manuallyConfirmed||!p.nutrition?.manuallyConfirmed){
+        return {label:"需复查",kind:"warn",note:"关键资料已有记录，但仍存在未完成人工确认或质量事件检查的项目。"};
+      }
+      return {label:"可纳入比较",kind:"ok",note:"版本、阶段和关键资料已具备基本比较条件，仍需结合来源和单位逐项查看。"};
+    }
+    function renderBadgeItem(item){
+      return `<span class="badge ${esc(item.kind||"")}">${esc(item.label)}</span>`;
+    }
+    function renderProductSummaryBadges(product){
+      const p=product||blankProduct();
+      const basics=[
+        {label:p.versionType||"版本待补",kind:"blue"},
+        {label:p.stage||"阶段待补",kind:""},
+        {label:p.ageRange||"月龄待补",kind:p.ageRange?"":"warn"},
+        {label:getComplianceLabel(p.compliance?.verificationStatus),kind:complianceClass(p.compliance?.verificationStatus)},
+        {label:`完整度 ${p.dataCompleteness}%（${completenessLevel(p.dataCompleteness)}）`,kind:p.dataCompleteness>=80?"ok":p.dataCompleteness>=50?"warn":"danger"}
+      ];
+      const blockers=getProductBlockingIssues(p).slice(0,6);
+      const blockerLabels=new Set(blockers.map(x=>x.label));
+      const attention=getProductAttentionTags(p).filter(x=>x.group==="成分关注"&&!blockerLabels.has(x.label)).slice(0,6);
+      return `<div class="summary-labels">
+        <div class="summary-label-row"><span class="summary-label-title">一目了然</span>${basics.map(renderBadgeItem).join("")}</div>
+        <div class="summary-label-row attention"><span class="summary-label-title">阻断/资料</span>${blockers.length?blockers.map(renderBadgeItem).join(""):'<span class="badge ok">未发现阻断项</span>'}</div>
+        <div class="summary-label-row attention"><span class="summary-label-title">成分关注</span>${attention.length?attention.map(renderBadgeItem).join(""):'<span class="badge">暂无已记录关注项</span>'}</div>
+      </div>`;
+    }
+    function getProductSourceLinks(product){
+      const p=product||blankProduct();
+      const links=[
+        p.compliance?.sourceUrl,p.ingredients?.sourceUrl,p.nutrition?.sourceUrl,
+        ...SCORE_DIMENSIONS.map(d=>p.scores?.[d.key]?.sourceUrl),
+        ...(p.advantages||[]).filter(x=>x.manuallyConfirmed).map(x=>x.sourceUrl),
+        ...(p.cautions||[]).filter(x=>x.manuallyConfirmed).map(x=>x.sourceUrl)
+      ].map(safeUrl).filter(Boolean);
+      return [...new Set(links)];
+    }
+    function renderQuickList(items,emptyText){
+      return items.length?`<ul class="quick-list">${items.map(item=>`<li>${esc(item)}</li>`).join("")}</ul>`:`<div class="quick-empty">${esc(emptyText)}</div>`;
+    }
+    function renderDetailQuickJudgement(product){
+      const p=product||blankProduct(),status=getProductQuickStatus(p);
+      const advantages=(p.advantages||[]).filter(x=>x.manuallyConfirmed).slice(0,3).map(x=>x.title+(x.description?"："+x.description:""));
+      const confirmedCautions=(p.cautions||[]).filter(x=>x.manuallyConfirmed).map(x=>x.title+(x.description?"："+x.description:""));
+      const ingredientAttention=p.ingredients?.manuallyConfirmed
+        ? getProductAttentionTags(p).filter(x=>x.group==="成分关注").map(x=>`成分关注：${x.label}`)
+        : [];
+      const cautions=[...confirmedCautions,...ingredientAttention].filter((x,i,a)=>a.indexOf(x)===i).slice(0,3);
+      const missing=getMissingCriticalFields(p);
+      const links=getProductSourceLinks(p);
+      const coreLinks=[p.compliance?.sourceUrl,p.ingredients?.sourceUrl,p.nutrition?.sourceUrl].map(safeUrl).filter(Boolean);
+      const manualParts=[
+        `产品审核：${p.reviewStatus==="已确认"?"已确认":p.reviewStatus||"未确认"}`,
+        `配料表：${p.ingredients?.manuallyConfirmed?"已确认":"未确认"}`,
+        `营养表：${p.nutrition?.manuallyConfirmed?"已确认":"未确认"}`
+      ];
+      return `<section class="panel quick-judgement">
+        <div class="quick-status">
+          <div class="quick-status-main"><strong>快速判断</strong><span class="badge ${esc(status.kind)}">${esc(status.label)}</span></div>
+          <div class="quick-status-note">${esc(status.note)}</div>
+        </div>
+        <div class="quick-grid">
+          <div class="quick-section"><h4>重点优势（最多 3 条）</h4>${renderQuickList(advantages,"暂无已人工确认的优势。")}</div>
+          <div class="quick-section"><h4>重点注意（最多 3 条）</h4>${renderQuickList(cautions,"暂无已人工确认的注意事项或成分关注项。")}</div>
+          <div class="quick-section"><h4>缺失信息</h4>${renderQuickList(missing,"关键字段未发现明显缺失。")}</div>
+          <div class="quick-section"><h4>证据可信度</h4>
+            <div class="tiny">来源完整度：${coreLinks.length}/3 个核心来源</div>
+            <div class="tiny" style="margin-top:5px">${esc(manualParts.join("；"))}</div>
+            <div class="tiny" style="margin-top:5px">数据完整度：${esc(p.dataCompleteness)}%（${esc(completenessLevel(p.dataCompleteness))}）</div>
+            <div class="evidence-links">${links.length?links.slice(0,6).map((url,i)=>`<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">来源 ${i+1}</a>`).join(""):'<span class="quick-empty">暂无可打开的来源链接。</span>'}${links.length>6?`<span class="quick-empty">另有 ${links.length-6} 个来源</span>`:""}</div>
+          </div>
+        </div>
+        <div class="quick-guide">本页仅供公开资料初筛；如宝宝存在过敏、消化、早产、低体重或特殊医学用途需求，请咨询医生或专业营养人员。</div>
+      </section>`;
+    }
+    function shortProductName(p,index){
+      return String(p.productName||p.brand||`产品${index+1}`).trim();
+    }
+    function compareValueMap(products,getter){
+      return products.map((p,i)=>`${shortProductName(p,i)}：${getter(p)}`).join("；");
+    }
+    function normalizeNutritionUnit(value){
+      return String(value||"").trim().toLowerCase()
+        .replace(/\s+/g,"")
+        .replace(/毫克/g,"mg").replace(/微克/g,"μg").replace(/克/g,"g")
+        .replace(/／/g,"/").replace(/每/g,"/");
+    }
+    function getNutritionUnit(p,key){
+      const raw=String(p.nutrition?.[`${key}Unit`]||"").trim();
+      if(raw) return normalizeNutritionUnit(raw);
+      const value=String(p.nutrition?.[key]||"");
+      const match=value.match(/(mg|g|μg|ug|毫克|微克|克)\s*(?:[/／]\s*(?:100g|100ml|100mL|100千焦|100kJ))?/i);
+      return match?normalizeNutritionUnit(match[0]):"";
+    }
+    function compareSummaryItem(title,text,kind="warn"){
+      return `<div class="compare-summary-item ${esc(kind)}"><h4>${esc(title)}</h4><p>${esc(text)}</p></div>`;
+    }
+    function renderCompareSummary(products){
+      const selected=(products||[]).filter(Boolean);
+      if(selected.length<2) return "";
+      const items=[];
+      const stages=[...new Set(selected.map(p=>p.stage||"未填写"))];
+      items.push(compareSummaryItem("阶段",stages.length>1?`阶段不同（${stages.join("、")}），不能直接比较。`:`均为 ${stages[0]}，仍需核对适用月龄。`,stages.length>1?"danger":"ok"));
+      const versions=[...new Set(selected.map(p=>p.versionType||"未填写"))];
+      items.push(compareSummaryItem("版本类型",versions.length>1?`版本类型不同（${versions.join("、")}）。国行、进口、海外、跨境应分开看，不能只按名称或总分合并判断。`:`均记录为 ${versions[0]}，仍需核对具体包装和注册信息。`,versions.length>1?"danger":"ok"));
+      const complianceStatuses=[...new Set(selected.map(p=>getComplianceLabel(p.compliance?.verificationStatus)))];
+      items.push(compareSummaryItem("注册核验状态",complianceStatuses.length>1?compareValueMap(selected,p=>getComplianceLabel(p.compliance?.verificationStatus)):`均为 ${complianceStatuses[0]}。`,selected.every(p=>p.compliance?.verificationStatus==="verified")?"ok":"warn"));
+      const completeness=selected.map(p=>Number(p.dataCompleteness||0));
+      const min=Math.min(...completeness),max=Math.max(...completeness);
+      items.push(compareSummaryItem("资料完整度",`${compareValueMap(selected,p=>`${p.dataCompleteness}%（${completenessLevel(p.dataCompleteness)}）`)}${max!==min?`；相差 ${max-min} 个百分点。`:"；完整度一致。"}`,min<50?"danger":max-min>=20?"warn":"ok"));
+      const ingredientDefs=[
+        ["棕榈油","hasPalmOil"],["蔗糖","hasSucrose"],["麦芽糊精","hasMaltodextrin"],["香精香料","hasFlavoring"]
+      ];
+      const ingredientDiffs=ingredientDefs.filter(([,key])=>new Set(selected.map(p=>triText(p.ingredients?.[key]))).size>1);
+      const ingredientText=ingredientDiffs.length
+        ? ingredientDiffs.map(([label,key])=>`${label}（${compareValueMap(selected,p=>triText(p.ingredients?.[key]))}）`).join("\n")
+        : `棕榈油、蔗糖、麦芽糊精、香精香料的已记录状态未发现差异。${selected.some(p=>!p.ingredients?.manuallyConfirmed)?"但存在未人工确认的配料数据。":""}`;
+      items.push(compareSummaryItem("关键成分关注项",ingredientText,ingredientDiffs.length?"warn":selected.some(p=>!p.ingredients?.manuallyConfirmed)?"warn":"ok"));
+      const nutritionDefs=[["DHA","dha"],["ARA","ara"],["OPO","opo"],["乳铁蛋白","lactoferrin"],["HMO","hmo"]];
+      const unitMismatches=[],unitMissing=[],valueMissing=[];
+      nutritionDefs.forEach(([label,key])=>{
+        const withValue=selected.filter(p=>String(p.nutrition?.[key]||"").trim());
+        if(withValue.length&&withValue.length<selected.length) valueMissing.push(label);
+        if(!withValue.length) return;
+        const units=withValue.map(p=>getNutritionUnit(p,key));
+        if(units.some(u=>!u)) unitMissing.push(label);
+        const known=[...new Set(units.filter(Boolean))];
+        if(known.length>1) unitMismatches.push(`${label}（${compareValueMap(selected,p=>getNutritionUnit(p,key)||"单位缺失")}）`);
+      });
+      let unitText="已填写且可比的 DHA、ARA、OPO、乳铁蛋白、HMO 项目未发现单位不一致。";
+      let unitKind="ok";
+      if(unitMismatches.length){
+        unitText=`${unitMismatches.join("\n")}\n单位不一致时不能直接比较数值。`;unitKind="danger";
+      }else if(unitMissing.length||valueMissing.length){
+        const parts=[];
+        if(unitMissing.length) parts.push(`${[...new Set(unitMissing)].join("、")} 存在单位缺失`);
+        if(valueMissing.length) parts.push(`${[...new Set(valueMissing)].join("、")} 存在数值缺失`);
+        unitText=`${parts.join("；")}。补齐数值与单位前不能直接比较。`;unitKind="warn";
+      }
+      items.push(compareSummaryItem("营养成分单位",unitText,unitKind));
+      const totals=selected.map(totalScore),scoreMin=Math.min(...totals),scoreMax=Math.max(...totals);
+      items.push(compareSummaryItem("总分差值",`${compareValueMap(selected,p=>`${totalScore(p)} 分`)}；最高与最低相差 ${scoreMax-scoreMin} 分。总分仅作为公开资料整理参考，不是医学结论。`,"warn"));
+      return `<section class="panel compare-summary"><div class="panel-title"><div><h3>差异摘要</h3><div class="section-desc">先看能否比较，再看详细字段；阻断项和单位问题优先于总分。</div></div></div><div class="compare-summary-grid">${items.join("")}</div></section>`;
+    }
+
     function formatDate(value){
       if(!value) return "未记录";
       const d = new Date(value);
@@ -1038,12 +1400,14 @@
           <div class="tiny" style="margin-top:5px">访客在页面中新增或编辑的内容只保存在自己的浏览器，不会自动改动 Cloudflare 上的公共资料。</div>
         </div>`;
     }
-    function updateNav(){
+function updateNav(){
       document.querySelectorAll("[data-nav]").forEach(btn=>{
         const nav=btn.dataset.nav;
-        const active = (state.view==="form" && nav==="add") || (state.view==="extractionReview" && nav==="extraction") || (state.view==="qualityEventForm"&&nav==="quality") || state.view===nav;
+        const active=(state.view==="extractionReview"&&nav==="extraction")||(state.view==="qualityEventForm"&&nav==="quality")||(state.view==="releaseCheck"&&nav==="data")||state.view===nav;
         btn.classList.toggle("active",active);
       });
+      const maintenance=document.querySelector(".maintenance-nav");
+      if(maintenance&&["history","quality","qualityEventForm","updates","data","releaseCheck","aiSettings"].includes(state.view)) maintenance.open=true;
       updateCompareCount();
     }
     function updateCompareCount(){
@@ -1059,19 +1423,22 @@
       const updatePending=state.updateQueue.filter(x=>["新发现","待确认","需要复查"].includes(x.auditStatus)).length;
       if(updateEl) updateEl.textContent=updatePending?`(${updatePending})`:"";
     }
-    function navigate(view, payload={}){
+function navigate(view,payload={}){
       state.view=view;
       if("editingId" in payload) state.editingId=payload.editingId;
       if("detailId" in payload) state.detailId=payload.detailId;
       if("extractionId" in payload) state.extractionId=payload.extractionId;
       if("eventEditingId" in payload) state.eventEditingId=payload.eventEditingId;
       if("updateEditingId" in payload) state.updateEditingId=payload.updateEditingId;
+      if("copySourceId" in payload) state.copySourceId=payload.copySourceId;
+      if("feedbackProductId" in payload) state.feedbackProductId=payload.feedbackProductId;
       render();
       window.scrollTo({top:0,behavior:"smooth"});
     }
-    function render(){
+function render(){
       updateNav();
       if(state.view==="form") app.innerHTML=renderForm();
+      else if(state.view==="copy") app.innerHTML=renderCopyProduct();
       else if(state.view==="detail") app.innerHTML=renderDetail();
       else if(state.view==="compare") app.innerHTML=renderCompare();
       else if(state.view==="extraction") app.innerHTML=renderExtractionWorkspace();
@@ -1081,10 +1448,12 @@
       else if(state.view==="qualityEventForm") app.innerHTML=renderQualityEventForm();
       else if(state.view==="updates") app.innerHTML=renderUpdateQueue();
       else if(state.view==="data") app.innerHTML=renderData();
+      else if(state.view==="releaseCheck") app.innerHTML=renderReleaseCheck();
+      else if(state.view==="feedback") app.innerHTML=renderFeedbackForm();
+      else if(state.view==="aiSettings") app.innerHTML=renderAISettingsPage();
       else app.innerHTML=renderList();
       updateNav();
     }
-
     function getFilteredProducts(){
       const f=state.filters;
       let arr=state.products.filter(p=>{
@@ -1134,7 +1503,7 @@
         <div class="page-head">
           <div><h2>奶粉产品资料库</h2><p>以人工确认数据为准；合规状态是排行准入门槛，不计入 100 分总分。</p></div>
           <div class="actions">
-            <button class="btn soft" data-action="new-extraction">AI 辅助录入</button>
+            <button class="btn soft" data-action="new-extraction">录入资料</button>
             <button class="btn soft" data-action="export">导出 JSON</button>
             <button class="btn primary" data-action="new-product">新增产品</button>
           </div>
@@ -1188,23 +1557,20 @@
             ${img?`<img class="product-image" src="${esc(img)}" alt="${esc(p.productName)}" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="image-placeholder" style="display:none">暂无图片</div>`:`<div class="image-placeholder">暂无图片</div>`}
             <div>
               <h3 class="card-title">${esc(p.productName || "未命名产品")}</h3>
-              <div class="card-sub">${esc([p.brand,p.series,p.stage].filter(Boolean).join(" · ") || "基础信息待填写")}</div>
+              <div class="card-sub">${esc([p.brand,p.series].filter(Boolean).join(" · ") || "基础信息待填写")}</div>
               <div class="badges">
-                <span class="badge blue">${esc(p.versionType)}</span>
-                <span class="badge ${complianceClass(p.compliance.verificationStatus)}">${esc(getComplianceLabel(p.compliance.verificationStatus))}</span>
                 <span class="badge">${esc(p.reviewStatus)}</span>
                 <span class="badge ${p.dataOrigin==="public"?"ok":"warn"}">${p.dataOrigin==="public"?"公共资料":"本地资料"}</span>
-                ${p.ingredients.manuallyConfirmed?'<span class="badge ok">原料已确认</span>':''}
-                <span class="completeness-badge completeness-${completenessClass(p.dataCompleteness)}">完整度${esc(completenessLevel(p.dataCompleteness))}</span>
+                ${p.ingredients.manuallyConfirmed?'<span class="badge ok">配料已确认</span>':'<span class="badge warn">配料未确认</span>'}
               </div>
             </div>
           </div>
+          ${renderProductSummaryBadges(p)}
           <div class="score-row">
-            <div class="total-score"><strong>${total}</strong><span>/ 100</span></div>
-            <div class="${eligible?"rank":"muted tiny"}">${eligible?`排行 #${rank}`:esc(rankingStatusText(p))}</div>
+            <div class="total-score"><span>参考总分</span><strong>${total}</strong><span>/ 100</span></div>
+            <div class="card-score-note">${eligible?`排行 #${rank}`:esc(rankingStatusText(p))}<br>总分不是医学结论</div>
           </div>
           <div class="card-body">
-            <div class="tiny muted" style="margin-bottom:8px">总分不是医学结论，只是基于公开资料和人工确认规则的信息整理结果。</div>
             ${SCORE_DIMENSIONS.map(d=>{
               const s=p.scores[d.key];
               const pct=Math.round((s.score/d.max)*100);
@@ -1217,19 +1583,17 @@
                 </div>
               </details>`;
             }).join("")}
-            <div class="tiny muted">数据完整度 ${p.dataCompleteness}%（${esc(completenessLevel(p.dataCompleteness))}）· 最近资料更新 ${formatDate(latestProductUpdate(p))}</div>
-            ${p.dataCompleteness<50?'<div class="inline-warning">信息不足，暂不推荐作为首选。</div>':''}
+            <div class="tiny muted">最近资料更新 ${formatDate(latestProductUpdate(p))}</div>
           </div>
           <div class="card-actions">
             <button class="btn small" data-action="view-product" data-id="${esc(p.id)}">查看详情</button>
             <button class="btn small" data-action="edit-product" data-id="${esc(p.id)}">编辑</button>
+            <button class="btn small soft" data-action="copy-product" data-id="${esc(p.id)}">复制创建</button>
             <button class="btn small danger" data-action="delete-product" data-id="${esc(p.id)}">删除</button>
             <label class="compare-check"><input type="checkbox" data-compare-id="${esc(p.id)}" ${state.compareIds.includes(p.id)?"checked":""}> 加入对比</label>
           </div>
         </article>`;
-    }
-
-    function val(p,path){
+    }    function val(p,path){
       return path.split(".").reduce((o,k)=>o?.[k],p) ?? "";
     }
     function triSelect(name,value){
@@ -1255,6 +1619,150 @@
     function checkboxField(label,name,checked,opts={}){
       return `<div class="field${opts.span?` span-${opts.span}`:""}"><label>${esc(opts.groupLabel||"确认状态")}</label><label class="inline-check"><input type="checkbox" name="${esc(name)}" ${checked?"checked":""}> ${esc(label)}</label></div>`;
     }
+
+    function hasFilled(value){return value!==null&&value!==undefined&&String(value).trim()!=="";}
+    function hasLinkedEvidenceImage(product){
+      const ids=new Set(product?.evidenceIds||[]);
+      return state.evidenceRecords.some(record=>(record.productId===product?.id||ids.has(record.evidenceId))&&record.inputSource?.images?.length);
+    }
+    function getProductHealthChecklist(product){
+      const p=product||blankProduct(),linkedImage=hasLinkedEvidenceImage(p);
+      const anySource=[p.compliance?.sourceUrl,p.ingredients?.sourceUrl,p.nutrition?.sourceUrl].some(hasFilled);
+      const ingredientEvidence=hasFilled(p.ingredients?.rawText)||hasFilled(p.ingredients?.screenshot)||linkedImage;
+      const nutritionEvidence=hasNutritionTable(p)||linkedImage;
+      const registration=hasFilled(p.compliance?.formulaRegistrationNo)||hasFilled(p.compliance?.chinaRegistrationNo);
+      const fortification=["dha","ara","opo","lactoferrin","hmo","probioticsPrebiotics","otherFortification"].some(k=>hasFilled(p.nutrition?.[k]));
+      const groups=[
+        {key:"minimum",label:"最低可用信息",items:[
+          ["产品名",hasFilled(p.productName)],["品牌",hasFilled(p.brand)],["阶段",hasFilled(p.stage)],["适用月龄",hasFilled(p.ageRange)],
+          ["版本类型",hasFilled(p.versionType)],["来源信息",anySource],["配料表或截图",ingredientEvidence],["营养表或截图",nutritionEvidence]
+        ]},
+        {key:"important",label:"重要补充信息",items:[
+          ["注册号",registration],["生产企业",hasFilled(p.manufacturer)],["生产工厂",hasFilled(p.factory)],["奶源",hasFilled(p.milkSourceRegion)],
+          ["第一位原料",hasFilled(p.ingredients?.firstIngredient)],["是否含乳糖",p.ingredients?.hasLactose!=null],
+          ["是否含蔗糖",p.ingredients?.hasSucrose!=null],["是否含棕榈油",p.ingredients?.hasPalmOil!=null],
+          ["是否含香精香料",p.ingredients?.hasFlavoring!=null],["质量事件检查状态",p.qualityEventReview?.status==="已检查"]
+        ]},
+        {key:"optional",label:"可选增强信息",items:[
+          ["价格",Array.isArray(p.priceRecords)&&p.priceRecords.some(x=>hasFilled(x.salePrice)||hasFilled(x.listPrice))],
+          ["图片",hasFilled(p.imageUrl)],["强化成分",fortification],
+          ["优势",Array.isArray(p.advantages)&&p.advantages.some(x=>hasFilled(x.title))],
+          ["注意事项",Array.isArray(p.cautions)&&p.cautions.some(x=>hasFilled(x.title))],
+          ["评分",SCORE_DIMENSIONS.some(d=>hasFilled(p.scores?.[d.key]?.reason)||Number(p.scores?.[d.key]?.score)>0)]
+        ]}
+      ];
+      return groups.map(group=>({...group,total:group.items.length,done:group.items.filter(x=>x[1]).length,missing:group.items.filter(x=>!x[1]).map(x=>x[0])}));
+    }
+    function renderProductHealth(product){
+      const groups=getProductHealthChecklist(product);
+      const total=groups.reduce((sum,g)=>sum+g.total,0),done=groups.reduce((sum,g)=>sum+g.done,0);
+      const registration=hasFilled(product.compliance?.formulaRegistrationNo)||hasFilled(product.compliance?.chinaRegistrationNo);
+      const impacts=[];
+      if(!registration) impacts.push("缺注册号：不能进入正式排行。");
+      const linkedImage=hasLinkedEvidenceImage(product);
+      if(!hasIngredientTable(product)&&!hasFilled(product.ingredients?.screenshot)&&!linkedImage) impacts.push("缺配料表或截图：不建议作为公开比较依据。");
+      if(!hasNutritionTable(product)&&!linkedImage) impacts.push("缺营养表或截图：不建议作为公开比较依据。");
+      if(product.qualityEventReview?.status!=="已检查") impacts.push("质量事件未检查：详情页将显示需复查。");
+      return `<section class="form-section health-panel" id="productHealthPanel">
+        <div class="panel-title"><div><h3>资料健康度</h3><div class="section-desc">根据当前表单动态计算，不新增持久化字段。</div></div><span class="badge blue">${done}/${total} 项完成</span></div>
+        <div class="health-summary"><span class="health-score">${Math.round(done/total*100)}%</span><span class="muted">优先补齐最低可用信息，再完善注册、来源与人工确认。</span></div>
+        <div class="health-groups">${groups.map(group=>`<div class="health-group"><h4>${esc(group.label)} <span class="muted tiny">${group.done}/${group.total}</span></h4>${group.items.map(([label,ok])=>`<div class="health-item ${ok?"done":"missing"}"><span class="mark">${ok?"✓":"!"}</span><span>${esc(label)}</span></div>`).join("")}${group.missing.length?`<div class="health-impact">缺失：${esc(group.missing.join("、"))}</div>`:'<div class="tiny muted">本组已完成。</div>'}</div>`).join("")}</div>
+        ${impacts.length?`<div class="health-impact"><b>缺失影响：</b>${esc(impacts.join(" "))}</div>`:'<div class="safe-note" style="margin-top:10px">最低公开比较资料已基本齐备，仍需核对审核状态和来源真实性。</div>'}
+      </section>`;
+    }
+    function productHealthSnapshotFromForm(form){
+      const existing=state.products.find(p=>p.id===form.dataset.id);
+      const p=existing?deepClone(existing):blankProduct();
+      const read=name=>{
+        const el=form.elements.namedItem(name);
+        return !el?"":el.type==="checkbox"?el.checked:el.value.trim();
+      };
+      ["productName","brand","stage","ageRange","versionType","milkSourceRegion","manufacturer","factory","imageUrl"].forEach(k=>p[k]=read(k));
+      p.compliance.formulaRegistrationNo=read("compliance.formulaRegistrationNo");
+      p.compliance.chinaRegistrationNo=read("compliance.chinaRegistrationNo");
+      p.compliance.sourceUrl=read("compliance.sourceUrl");
+      p.ingredients.rawText=read("ingredients.rawText");p.ingredients.screenshot=read("ingredients.screenshot");p.ingredients.sourceUrl=read("ingredients.sourceUrl");
+      p.ingredients.firstIngredient=read("ingredients.firstIngredient");
+      ["hasLactose","hasSucrose","hasPalmOil","hasFlavoring"].forEach(k=>p.ingredients[k]=triValue(read(`ingredients.${k}`)));
+      p.nutrition.rawText=read("nutrition.rawText");p.nutrition.sourceUrl=read("nutrition.sourceUrl");
+      ["energy","protein","fat","carbohydrate"].forEach(k=>p.nutrition.basic[k]=read(`nutrition.basic.${k}`));
+      ["dha","ara","opo","lactoferrin","hmo","probioticsPrebiotics","otherFortification"].forEach(k=>p.nutrition[k]=read(`nutrition.${k}`));
+      p.qualityEventReview.status=read("qualityEventReview.status")||"未检查";
+      p.priceRecords=[...form.querySelectorAll(".price-item")].map(x=>({salePrice:x.querySelector('[name="salePrice"]')?.value||"",listPrice:x.querySelector('[name="listPrice"]')?.value||""}));
+      p.advantages=[...form.querySelectorAll(".advantage-item")].map(x=>({title:x.querySelector('[name="title"]')?.value||""}));
+      p.cautions=[...form.querySelectorAll(".caution-item")].map(x=>({title:x.querySelector('[name="title"]')?.value||""}));
+      SCORE_DIMENSIONS.forEach(d=>{p.scores[d.key].score=read(`scores.${d.key}.score`);p.scores[d.key].reason=read(`scores.${d.key}.reason`);});
+      return p;
+    }
+    function updateProductHealthPreview(){
+      const form=document.getElementById("productForm"),panel=document.getElementById("productHealthPanel");
+      if(!form||!panel) return;
+      panel.outerHTML=renderProductHealth(productHealthSnapshotFromForm(form));
+    }
+    function renderCopyProduct(){
+      const source=state.products.find(p=>p.id===state.copySourceId);
+      if(!source) return `${renderNotices()}<div class="empty"><h3>未找到要复制的产品</h3><button class="btn" data-action="back-list">返回资料库</button></div>`;
+      return `${renderNotices()}
+        <div class="page-head"><div><h2>复制已有产品创建</h2><p>从“${esc(source.productName||"未命名产品")}”带入所选资料，生成独立草稿后重新人工确认。</p></div><button class="btn" data-action="view-product" data-id="${esc(source.id)}">返回原产品</button></div>
+        <form id="copyProductForm" data-id="${esc(source.id)}">
+          <section class="panel">
+            <h3>选择要复制的内容</h3>
+            <div class="pending-banner">新产品会生成新的 id、createdAt、updatedAt，状态设为“草稿”，dataOrigin 设为 local。关联证据、质量事件发布状态和所有人工确认标记不会沿用。</div>
+            <div class="copy-options">
+              ${[
+                ["basic","基础信息","产品名、品牌、阶段、月龄、版本、生产信息与图片",true],
+                ["compliance","合规信息","复制注册编号和来源，但注册核验状态重置为待核验",true],
+                ["ingredients","配料信息","复制配料内容和来源，人工确认重置",true],
+                ["nutrition","营养信息","复制营养内容和来源，人工确认重置",true],
+                ["scores","评分","复制分值、理由和来源，所有维度重置为未确认",false],
+                ["notes","优势 / 注意事项","复制文字与来源，全部重置为未确认",false],
+                ["prices","价格记录","复制价格草稿，生成新 priceId 并重置确认",false]
+              ].map(([key,label,desc,checked])=>`<div class="copy-option"><label><input type="checkbox" name="copy.${key}" ${checked?"checked":""}> ${esc(label)}</label><p>${esc(desc)}</p></div>`).join("")}
+            </div>
+          </section>
+          <div class="save-bar"><div><b>复制后必须重新人工确认</b><div class="tiny muted">原产品不会被修改。</div></div><div class="actions"><button type="button" class="btn" data-action="view-product" data-id="${esc(source.id)}">取消</button><button type="submit" class="btn primary">创建草稿并编辑</button></div></div>
+        </form>`;
+    }
+    function createProductCopy(source,choices){
+      const copy=blankProduct(),now=nowISO();
+      if(choices.basic){
+        ["productName","brand","series","stage","ageRange","versionType","productionCountry","milkSourceRegion","manufacturer","factory","packageSpec","imageUrl","notes"].forEach(k=>copy[k]=deepClone(source[k]));
+        copy.productName=(source.productName||"未命名产品")+"（副本）";
+      }else copy.productName=(source.productName||"未命名产品")+"（副本）";
+      if(choices.compliance){
+        copy.compliance=deepClone(source.compliance);
+        copy.compliance.verificationStatus="pending";
+        copy.compliance.updatedAt=today();
+      }
+      if(choices.ingredients){copy.ingredients=deepClone(source.ingredients);copy.ingredients.manuallyConfirmed=false;}
+      if(choices.nutrition){copy.nutrition=deepClone(source.nutrition);copy.nutrition.manuallyConfirmed=false;}
+      if(choices.scores){
+        copy.scores=deepClone(source.scores);
+        SCORE_DIMENSIONS.forEach(d=>{copy.scores[d.key].manuallyConfirmed=false;copy.scores[d.key].updatedAt=today();});
+      }
+      if(choices.notes){
+        copy.advantages=deepClone(source.advantages||[]).map(x=>({...x,manuallyConfirmed:false}));
+        copy.cautions=deepClone(source.cautions||[]).map(x=>({...x,manuallyConfirmed:false}));
+      }
+      if(choices.prices){
+        copy.priceRecords=deepClone(source.priceRecords||[]).map(x=>normalizePriceRecord({...x,priceId:"pr_"+Date.now().toString(36)+"_"+Math.random().toString(36).slice(2,8),queueUpdateId:"",manuallyConfirmed:false}));
+      }
+      copy.id=uid();copy.createdAt=now;copy.updatedAt=now;copy.dataOrigin="local";copy.reviewStatus="草稿";
+      copy.evidenceIds=[];copy.qualityEvents=[];copy.qualityEventReview={status:"未检查",checkedAt:"",notes:"由复制创建，需重新检查质量事件。"};
+      copy.compliance.versionType=copy.versionType;copy.compliance.stage=copy.stage;copy.compliance.ageRange=copy.ageRange;
+      return normalizeProduct(copy);
+    }
+    function handleCopyProductSubmit(form){
+      const source=state.products.find(p=>p.id===form.dataset.id);
+      if(!source) return;
+      const choices={};
+      ["basic","compliance","ingredients","nutrition","scores","notes","prices"].forEach(k=>choices[k]=!!form.elements.namedItem(`copy.${k}`)?.checked);
+      const copy=createProductCopy(source,choices);
+      state.products.unshift(copy);saveProducts();
+      state.copySourceId=null;state.editingId=copy.id;state.view="form";render();window.scrollTo({top:0,behavior:"smooth"});
+      toast("已创建独立草稿，请重新人工确认");
+    }
+
     function renderForm(){
       const source=state.editingId ? state.products.find(p=>p.id===state.editingId) : null;
       const p=normalizeProduct(source?deepClone(source):blankProduct());
@@ -1266,6 +1774,7 @@
           <div class="actions"><button class="btn" data-action="back-list">返回列表</button></div>
         </div>
         <form id="productForm" data-id="${esc(p.id)}">
+          ${renderProductHealth(p)}
           <section class="form-section">
             <h3>1. 产品基础信息</h3><p class="section-desc">海外版、跨境版必须与国产、进口国行版分开建档，不能混为同一产品。</p>
             <div class="form-grid">
@@ -1443,6 +1952,50 @@
       </div>`;
     }
 
+    function getLinkedEvidenceRecords(product){
+      return state.evidenceRecords.filter(record=>record.productId===product.id||(product.evidenceIds||[]).includes(record.evidenceId));
+    }
+    function recordMatchesEvidence(record,fieldPaths=[],sourceUrl=""){
+      const normalizedFields=fieldPaths.flatMap(x=>String(x||"").split(",")).map(x=>x.trim()).filter(Boolean);
+      const url=safeUrl(sourceUrl);
+      if(url&&safeUrl(record.sourceUrl)===url) return true;
+      const hasTrace=field=>!!field&&(String(field.evidence||"").trim()!==""||(field.value!==null&&field.value!==undefined&&String(field.value).trim()!==""));
+      return normalizedFields.some(path=>{
+        if(path.endsWith(".*")){
+          const prefix=path.slice(0,-1);
+          return Object.entries(record.extractedFields||{}).some(([key,field])=>key.startsWith(prefix)&&hasTrace(field));
+        }
+        return hasTrace(record.extractedFields?.[path]);
+      });
+    }
+    function evidenceRecordSnippet(record,fieldPaths=[]){
+      const normalizedFields=fieldPaths.flatMap(x=>String(x||"").split(",")).map(x=>x.trim()).filter(Boolean);
+      const snippets=[];
+      normalizedFields.forEach(path=>{
+        Object.entries(record.extractedFields||{}).forEach(([key,field])=>{
+          const matches=path.endsWith(".*")?key.startsWith(path.slice(0,-1)):key===path;
+          if(matches&&field?.evidence) snippets.push(`${key}：${field.evidence}`);
+        });
+      });
+      return [...new Set(snippets)].join("\n");
+    }
+    function renderEvidenceChain(product,config={}){
+      const fieldPaths=(config.fieldPaths||[]).filter(Boolean),allRecords=getLinkedEvidenceRecords(product);
+      const explicit=(config.items||[]).filter(item=>item&&(safeUrl(item.sourceUrl)||allRecords.some(record=>recordMatchesEvidence(record,item.field?String(item.field).split(","):fieldPaths,item.sourceUrl))));
+      const linked=allRecords.filter(record=>recordMatchesEvidence(record,fieldPaths,explicit.find(x=>safeUrl(x.sourceUrl))?.sourceUrl||""));
+      if(!explicit.length&&!linked.length) return `<details class="evidence-chain"><summary>${esc(config.label||"查看证据")}</summary><div class="evidence-empty">暂无可追溯证据</div></details>`;
+      const explicitHtml=explicit.map(item=>{
+        const matches=getLinkedEvidenceRecords(product).filter(record=>recordMatchesEvidence(record,item.field?String(item.field).split(","):fieldPaths,item.sourceUrl));
+        const level=item.sourceLevel||matches[0]?.sourceLevel||"未记录";
+        return `<div class="evidence-chain-item"><div class="evidence-chain-meta"><span class="badge">来源等级：${esc(level)}</span>${sourceBadge(!!item.confirmed)}<span class="badge blue">证据字段：${esc(item.field||fieldPaths.join("、")||"未记录")}</span></div><div>${linkHtml(item.sourceUrl,"打开来源链接")}</div>${item.excerpt?`<div class="evidence-chain-snippet">${esc(String(item.excerpt).slice(0,800))}</div>`:""}${matches.length?`<div class="actions" style="margin-top:8px">${matches.map(record=>`<button class="btn small soft" data-action="open-extraction" data-id="${esc(record.evidenceId)}">查看原始证据</button>`).join("")}</div>`:""}</div>`;
+      }).join("");
+      const linkedHtml=linked.filter(record=>!explicit.some(item=>safeUrl(item.sourceUrl)&&safeUrl(item.sourceUrl)===safeUrl(record.sourceUrl))).map(record=>{
+        const snippet=evidenceRecordSnippet(record,fieldPaths)||record.originalOcrText||record.notes||"";
+        return `<div class="evidence-chain-item"><div class="evidence-chain-meta"><span class="level-pill level-${esc(record.sourceLevel)}">来源等级 ${esc(record.sourceLevel)}</span>${sourceBadge(record.manuallyConfirmed)}<span class="badge blue">EvidenceRecord</span></div><div>${linkHtml(record.sourceUrl,"打开来源链接")}</div>${snippet?`<div class="evidence-chain-snippet">${esc(String(snippet).slice(0,800))}</div>`:""}<div class="actions" style="margin-top:8px"><button class="btn small soft" data-action="open-extraction" data-id="${esc(record.evidenceId)}">查看原始证据</button></div></div>`;
+      }).join("");
+      return `<details class="evidence-chain"><summary>${esc(config.label||"查看证据")}</summary><div class="evidence-chain-list">${explicitHtml}${linkedHtml||(!explicitHtml?'<div class="evidence-empty">暂无可追溯证据</div>':"")}</div></details>`;
+    }
+
     function renderDetail(){
       const p=state.products.find(x=>x.id===state.detailId);
       if(!p) return `<div class="empty"><h3>产品不存在</h3><button class="btn" data-action="back-list">返回列表</button></div>`;
@@ -1454,7 +2007,7 @@
       const confirmedPrices=(p.priceRecords||[]).filter(x=>x.manuallyConfirmed).sort((a,b)=>new Date(b.collectedAt)-new Date(a.collectedAt));
       return `
         ${renderNotices()}
-        <div class="page-head"><div><h2>产品详情</h2><p>最近资料更新时间：${formatDate(latestProductUpdate(p))}。所有分数、优势与注意事项均应回到具体证据查看。</p></div><div class="actions"><button class="btn" data-action="back-list">返回列表</button><button class="btn soft" data-action="open-quality-product" data-id="${esc(p.id)}">质量事件</button><button class="btn primary" data-action="edit-product" data-id="${esc(p.id)}">编辑产品</button></div></div>
+        <div class="page-head"><div><h2>产品详情</h2><p>最近资料更新时间：${formatDate(latestProductUpdate(p))}。所有分数、优势与注意事项均应回到具体证据查看。</p></div><div class="actions"><button class="btn" data-action="back-list">返回列表</button><button class="btn soft" data-action="open-quality-product" data-id="${esc(p.id)}">质量事件</button><button class="btn soft" data-action="copy-product" data-id="${esc(p.id)}">复制创建</button><button class="btn soft" data-action="product-feedback" data-id="${esc(p.id)}">提交纠错 / 线索</button><button class="btn primary" data-action="edit-product" data-id="${esc(p.id)}">编辑产品</button></div></div>
         <section class="panel detail-hero">
           ${img?`<img class="detail-image" src="${esc(img)}" alt="${esc(p.productName)}">`:`<div class="detail-placeholder">暂无产品图片</div>`}
           <div><div class="badges"><span class="badge blue">${esc(p.versionType)}</span><span class="badge ${complianceClass(p.compliance.verificationStatus)}">${esc(getComplianceLabel(p.compliance.verificationStatus))}</span><span class="badge">${esc(p.reviewStatus)}</span><span class="badge ${p.dataOrigin==="public"?"ok":"warn"}">${p.dataOrigin==="public"?"公共资料":"本地资料"}</span><span class="completeness-badge completeness-${completenessClass(p.dataCompleteness)}">完整度${esc(completenessLevel(p.dataCompleteness))}</span></div>
@@ -1462,19 +2015,21 @@
           <div class="detail-meta">${detailKV("生产国家",p.productionCountry)}${detailKV("奶源地区",p.milkSourceRegion)}${detailKV("生产企业",p.manufacturer)}${detailKV("生产工厂",p.factory)}${detailKV("包装规格",p.packageSpec)}${detailKV("数据完整度",p.dataCompleteness+"%（"+completenessLevel(p.dataCompleteness)+"）")}</div></div>
           <div class="hero-score"><div class="number">${total}</div><div>/ 100</div><div class="caption">总分不是医学结论，只是基于公开资料和人工确认规则的信息整理结果。</div><div class="badge ${isRankingEligible(p)?"ok":"warn"}" style="margin-top:10px">${esc(rankingStatusText(p))}</div></div>
         </section>
-        ${p.dataCompleteness<50?'<div class="risk-note"><b>信息不足，暂不推荐作为首选。</b>建议先补齐注册版本、原料表、营养表、来源链接、评分理由和质量事件检查状态。</div>':''}
-        <section class="panel"><div class="panel-title"><h3>合规状态（准入门槛）</h3><span class="badge ${complianceClass(p.compliance.verificationStatus)}">${esc(getComplianceLabel(p.compliance.verificationStatus))}</span></div><div class="data-list">${dataRow("配方注册号",p.compliance.formulaRegistrationNo)}${dataRow("在华注册编号",p.compliance.chinaRegistrationNo)}${dataRow("版本类型",p.versionType)}${dataRow("适用阶段",p.stage)}${dataRow("适用月龄",p.ageRange)}${dataRow("信息更新时间",p.compliance.updatedAt)}${dataRow("注册号来源",linkHtml(p.compliance.sourceUrl),true)}${dataRow("排行处理",rankingStatusText(p))}</div></section>
-        <section class="panel"><h3>5 维评分</h3>${SCORE_DIMENSIONS.map(d=>{const s=p.scores[d.key],pct=Math.round(s.score/d.max*100);return `<div class="score-card-row"><div><b>${esc(d.label)}</b><div class="score-bar"><i style="width:${pct}%"></i></div></div><div class="score-pill">${s.score}/${d.max}</div><div><div>${esc(s.reason||"未填写评分理由")}</div><div class="source-line">${linkHtml(s.sourceUrl)} · 更新 ${esc(s.updatedAt||"未记录")} · ${sourceBadge(s.manuallyConfirmed)}</div>${d.key==="qualitySafety"?`<div class="source-line"><b>事件规则建议：</b>${qualitySuggestion.score}/15；${esc(qualitySuggestion.reason)}</div>`:""}</div></div>`;}).join("")}</section>
-        <div class="detail-grid"><section class="panel"><div class="panel-title"><h3>原料信息</h3>${sourceBadge(p.ingredients.manuallyConfirmed)}</div><div class="data-list">${dataRow("第一位原料",p.ingredients.firstIngredient)}${dataRow("乳基原料类型",p.ingredients.dairyBaseType)}${dataRow("是否含乳糖",triText(p.ingredients.hasLactose))}${dataRow("是否全乳糖",triText(p.ingredients.allLactose))}${dataRow("含白砂糖/蔗糖",triText(p.ingredients.hasSucrose))}${dataRow("含果糖/果葡糖浆",triText(p.ingredients.hasFructoseSyrup))}${dataRow("含麦芽糊精",triText(p.ingredients.hasMaltodextrin))}${dataRow("含淀粉",triText(p.ingredients.hasStarch))}${dataRow("含棕榈油",triText(p.ingredients.hasPalmOil))}${dataRow("含香精香料",triText(p.ingredients.hasFlavoring))}${dataRow("A2-β 酪蛋白奶源",triText(p.ingredients.a2BetaCasein))}${dataRow("油脂来源",p.ingredients.fatSources)}${dataRow("原料表来源",linkHtml(p.ingredients.sourceUrl),true)}</div><div class="data-row"><b>原料表原文</b><span>${esc(p.ingredients.rawText||"未填写")}</span></div></section>
-        <section class="panel"><div class="panel-title"><h3>营养信息</h3>${sourceBadge(p.nutrition.manuallyConfirmed)}</div><div class="data-list">${dataRow("能量",p.nutrition.basic.energy)}${dataRow("蛋白质",p.nutrition.basic.protein)}${dataRow("脂肪",p.nutrition.basic.fat)}${dataRow("碳水化合物",p.nutrition.basic.carbohydrate)}${dataRow("DHA",joinAmount(p.nutrition.dha,p.nutrition.dhaUnit))}${dataRow("ARA",joinAmount(p.nutrition.ara,p.nutrition.araUnit))}${dataRow("OPO",joinAmount(p.nutrition.opo,p.nutrition.opoUnit))}${dataRow("乳铁蛋白",joinAmount(p.nutrition.lactoferrin,p.nutrition.lactoferrinUnit))}${dataRow("HMO",joinAmount(p.nutrition.hmo,p.nutrition.hmoUnit))}${dataRow("益生菌/益生元",p.nutrition.probioticsPrebiotics)}${dataRow("胆碱",p.nutrition.choline)}${dataRow("牛磺酸",p.nutrition.taurine)}${dataRow("核苷酸",p.nutrition.nucleotides)}${dataRow("其他强化成分",p.nutrition.otherFortification)}${dataRow("阶段国标核验",p.nutrition.standardCompliance)}${dataRow("营养表来源",linkHtml(p.nutrition.sourceUrl),true)}</div><div class="data-row"><b>营养表原文</b><span>${esc(p.nutrition.rawText||"未填写")}</span></div></section></div>
-        <div class="detail-grid"><section class="panel"><h3>核心优势 <span class="muted tiny">（仅显示人工确认项）</span></h3><div class="callout-list">${confirmedAdvantages.length?confirmedAdvantages.map(x=>`<div class="callout"><h4>${esc(x.title||"未命名优势")} ${sourceBadge(true)}</h4><p>${esc(x.description||"未填写说明")}</p><div class="source-line">证据字段：${esc(x.evidenceField||"未填写")} · ${linkHtml(x.sourceUrl)}</div></div>`).join(""):`<div class="muted">暂无已人工确认的核心优势。</div>`}</div></section>
-        <section class="panel"><h3>选购注意事项 <span class="muted tiny">（仅显示人工确认或人工发布项）</span></h3><div class="callout-list">${confirmedCautions.map(x=>`<div class="callout caution ${esc(x.severity||"light")}"><h4>${esc(x.title||"未命名注意事项")} ${sourceBadge(true)}</h4><p>${esc(x.description||"未填写说明")}</p><div class="source-line">严重程度：${esc(severityLabel(x.severity))} · 证据字段：${esc(x.evidenceField||"未填写")} · ${linkHtml(x.sourceUrl)}</div></div>`).join("")}${opinionEvents.map(e=>`<div class="callout caution light"><h4>舆情提示（不等同官方结论） <span class="level-pill level-${esc(e.sourceLevel)}">${esc(e.sourceLevel)}</span></h4><p>${esc(e.summary||"存在待核实舆情记录")}</p><div class="source-line">${linkHtml(e.sourceUrl)} · ${e.verified?"已核实来源内容":"事件本身未核实"}</div></div>`).join("")}${!confirmedCautions.length&&!opinionEvents.length?`<div class="muted">暂无已人工确认的选购注意事项。</div>`:""}</div></section></div>
+        ${renderDetailQuickJudgement(p)}
+        ${p.dataCompleteness<50?'<div class="risk-note"><b>资料完整度较低。</b>建议先补齐注册版本、配料表、营养表、来源链接、评分理由和质量事件检查状态，再作为公开比较依据。</div>':''}
+        <section class="panel"><div class="panel-title"><h3>合规状态（准入门槛）</h3><span class="badge ${complianceClass(p.compliance.verificationStatus)}">${esc(getComplianceLabel(p.compliance.verificationStatus))}</span></div><div class="data-list">${dataRow("配方注册号",p.compliance.formulaRegistrationNo)}${dataRow("在华注册编号",p.compliance.chinaRegistrationNo)}${dataRow("版本类型",p.versionType)}${dataRow("适用阶段",p.stage)}${dataRow("适用月龄",p.ageRange)}${dataRow("信息更新时间",p.compliance.updatedAt)}${dataRow("注册号来源",linkHtml(p.compliance.sourceUrl),true)}${dataRow("排行处理",rankingStatusText(p))}</div>${renderEvidenceChain(p,{label:"查看合规证据链",fieldPaths:["compliance.*"],items:[{sourceUrl:p.compliance.sourceUrl,confirmed:p.reviewStatus==="已确认",field:"compliance.formulaRegistrationNo, compliance.chinaRegistrationNo",excerpt:[p.compliance.formulaRegistrationNo,p.compliance.chinaRegistrationNo].filter(Boolean).join("；")} ]})}</section>
+        <section class="panel"><h3>5 维评分</h3>${SCORE_DIMENSIONS.map(d=>{const s=p.scores[d.key],pct=Math.round(s.score/d.max*100);return `<div class="score-card-row"><div><b>${esc(d.label)}</b><div class="score-bar"><i style="width:${pct}%"></i></div></div><div class="score-pill">${s.score}/${d.max}</div><div><div>${esc(s.reason||"未填写评分理由")}</div><div class="source-line">${linkHtml(s.sourceUrl)} · 更新 ${esc(s.updatedAt||"未记录")} · ${sourceBadge(s.manuallyConfirmed)}</div>${d.key==="qualitySafety"?`<div class="source-line"><b>事件规则建议：</b>${qualitySuggestion.score}/15；${esc(qualitySuggestion.reason)}</div>`:""}${renderEvidenceChain(p,{label:"查看评分证据链",fieldPaths:[`scores.${d.key}.*`],items:[{sourceUrl:s.sourceUrl,confirmed:s.manuallyConfirmed,field:`scores.${d.key}.reason`,excerpt:s.reason}]})}</div></div>`;}).join("")}</section>
+        <div class="detail-grid"><section class="panel"><div class="panel-title"><h3>原料信息</h3>${sourceBadge(p.ingredients.manuallyConfirmed)}</div><div class="data-list">${dataRow("第一位原料",p.ingredients.firstIngredient)}${dataRow("乳基原料类型",p.ingredients.dairyBaseType)}${dataRow("是否含乳糖",triText(p.ingredients.hasLactose))}${dataRow("是否全乳糖",triText(p.ingredients.allLactose))}${dataRow("含白砂糖/蔗糖",triText(p.ingredients.hasSucrose))}${dataRow("含果糖/果葡糖浆",triText(p.ingredients.hasFructoseSyrup))}${dataRow("含麦芽糊精",triText(p.ingredients.hasMaltodextrin))}${dataRow("含淀粉",triText(p.ingredients.hasStarch))}${dataRow("含棕榈油",triText(p.ingredients.hasPalmOil))}${dataRow("含香精香料",triText(p.ingredients.hasFlavoring))}${dataRow("A2-β 酪蛋白奶源",triText(p.ingredients.a2BetaCasein))}${dataRow("油脂来源",p.ingredients.fatSources)}${dataRow("原料表来源",linkHtml(p.ingredients.sourceUrl),true)}</div><div class="data-row"><b>原料表原文</b><span>${esc(p.ingredients.rawText||"未填写")}</span></div>${renderEvidenceChain(p,{label:"查看配料证据链",fieldPaths:["ingredients.*"],items:[{sourceUrl:p.ingredients.sourceUrl,confirmed:p.ingredients.manuallyConfirmed,field:"ingredients.rawText",excerpt:p.ingredients.rawText}]})}</section>
+        <section class="panel"><div class="panel-title"><h3>营养信息</h3>${sourceBadge(p.nutrition.manuallyConfirmed)}</div><div class="data-list">${dataRow("能量",p.nutrition.basic.energy)}${dataRow("蛋白质",p.nutrition.basic.protein)}${dataRow("脂肪",p.nutrition.basic.fat)}${dataRow("碳水化合物",p.nutrition.basic.carbohydrate)}${dataRow("DHA",joinAmount(p.nutrition.dha,p.nutrition.dhaUnit))}${dataRow("ARA",joinAmount(p.nutrition.ara,p.nutrition.araUnit))}${dataRow("OPO",joinAmount(p.nutrition.opo,p.nutrition.opoUnit))}${dataRow("乳铁蛋白",joinAmount(p.nutrition.lactoferrin,p.nutrition.lactoferrinUnit))}${dataRow("HMO",joinAmount(p.nutrition.hmo,p.nutrition.hmoUnit))}${dataRow("益生菌/益生元",p.nutrition.probioticsPrebiotics)}${dataRow("胆碱",p.nutrition.choline)}${dataRow("牛磺酸",p.nutrition.taurine)}${dataRow("核苷酸",p.nutrition.nucleotides)}${dataRow("其他强化成分",p.nutrition.otherFortification)}${dataRow("阶段国标核验",p.nutrition.standardCompliance)}${dataRow("营养表来源",linkHtml(p.nutrition.sourceUrl),true)}</div><div class="data-row"><b>营养表原文</b><span>${esc(p.nutrition.rawText||"未填写")}</span></div>${renderEvidenceChain(p,{label:"查看营养证据链",fieldPaths:["nutrition.*"],items:[{sourceUrl:p.nutrition.sourceUrl,confirmed:p.nutrition.manuallyConfirmed,field:"nutrition.rawText",excerpt:p.nutrition.rawText}]})}</section></div>
+        <div class="detail-grid"><section class="panel"><h3>核心优势 <span class="muted tiny">（仅显示人工确认项）</span></h3><div class="callout-list">${confirmedAdvantages.length?confirmedAdvantages.map(x=>`<div class="callout"><h4>${esc(x.title||"未命名优势")} ${sourceBadge(true)}</h4><p>${esc(x.description||"未填写说明")}</p><div class="source-line">证据字段：${esc(x.evidenceField||"未填写")} · ${linkHtml(x.sourceUrl)}</div>${renderEvidenceChain(p,{label:"查看优势证据链",fieldPaths:String(x.evidenceField||"").split(","),items:[{sourceUrl:x.sourceUrl,confirmed:x.manuallyConfirmed,field:x.evidenceField,excerpt:x.description}]})}</div>`).join(""):`<div class="muted">暂无已人工确认的核心优势。</div>`}</div></section>
+        <section class="panel"><h3>选购注意事项 <span class="muted tiny">（仅显示人工确认或人工发布项）</span></h3><div class="callout-list">${confirmedCautions.map(x=>`<div class="callout caution ${esc(x.severity||"light")}"><h4>${esc(x.title||"未命名注意事项")} ${sourceBadge(true)}</h4><p>${esc(x.description||"未填写说明")}</p><div class="source-line">严重程度：${esc(severityLabel(x.severity))} · 证据字段：${esc(x.evidenceField||"未填写")} · ${linkHtml(x.sourceUrl)}</div>${renderEvidenceChain(p,{label:"查看注意事项证据链",fieldPaths:String(x.evidenceField||"").split(","),items:[{sourceUrl:x.sourceUrl,confirmed:x.manuallyConfirmed,field:x.evidenceField,excerpt:x.description}]})}</div>`).join("")}${opinionEvents.map(e=>`<div class="callout caution light"><h4>舆情提示（不等同官方结论） <span class="level-pill level-${esc(e.sourceLevel)}">${esc(e.sourceLevel)}</span></h4><p>${esc(e.summary||"存在待核实舆情记录")}</p><div class="source-line">${linkHtml(e.sourceUrl)} · ${e.verified?"已核实来源内容":"事件本身未核实"}</div></div>`).join("")}${!confirmedCautions.length&&!opinionEvents.length?`<div class="muted">暂无已人工确认的选购注意事项。</div>`:""}</div></section></div>
         <section class="panel"><div class="panel-title"><div><h3>质量安全与事件记录</h3><div class="tiny muted">检查状态：${esc(p.qualityEventReview.status)} · ${esc(p.qualityEventReview.checkedAt||"未记录日期")}</div></div><button class="btn small soft" data-action="open-quality-product" data-id="${esc(p.id)}">管理事件</button></div>
           ${events.length?events.map(e=>renderPublishedQualityEvent(e)).join(""):`<div class="muted">暂无人工发布的关联事件。“未展示”不等于未发生；当前库中另有 ${allEvents.filter(e=>e.auditStatus!=="已发布").length} 条未发布或待审核记录。</div>`}</section>
         <section class="panel"><h3>价格记录 <span class="muted tiny">（参考信息，不参与核心推荐）</span></h3><div class="risk-note" style="margin-bottom:10px">奶粉选择应先看版本、来源、原料、营养和质量记录，再看价格。异常低价需关注销售渠道、临期、旧包装、组合装和来源不明等风险。</div>${confirmedPrices.length?`<div style="overflow:auto"><table class="price-table"><thead><tr><th>渠道</th><th>店铺类型</th><th>规格</th><th>标价</th><th>优惠后价</th><th>每100g</th><th>采集日期</th><th>来源</th></tr></thead><tbody>${confirmedPrices.map(r=>`<tr><td>${esc(r.channel||"未填写")}</td><td>${esc(r.storeType||"未填写")}</td><td>${esc(r.specification||"未填写")}</td><td>${esc(r.listPrice||"-")}</td><td>${esc(r.salePrice||"-")}</td><td>${esc(r.pricePer100g||"-")}</td><td>${esc(r.collectedAt||"-")}${r.promotion?' · 大促':''}</td><td>${linkHtml(r.sourceUrl)}</td></tr>`).join("")}</tbody></table></div>`:`<div class="muted">暂无已人工确认的价格记录。</div>`}</section>
         <section class="panel"><div class="panel-title"><h3>关联原始证据</h3><button class="btn small soft" data-action="new-extraction">新增抽取证据</button></div>${state.evidenceRecords.filter(x=>x.productId===p.id||(p.evidenceIds||[]).includes(x.evidenceId)).length?`<div class="history-list">${state.evidenceRecords.filter(x=>x.productId===p.id||(p.evidenceIds||[]).includes(x.evidenceId)).map(record=>`<div class="history-card"><div><b>${esc(record.sourceType)} / ${esc(record.sourceLevel)}</b><div class="tiny muted">${formatDate(record.extractedAt)} · ${esc(getEvidenceStatusLabel(record.status))}</div></div><div class="actions"><button class="btn small" data-action="open-extraction" data-id="${esc(record.evidenceId)}">查看证据</button></div></div>`).join("")}</div>`:`<div class="muted">暂未关联 EvidenceRecord。</div>`}</section>
+        <section class="panel"><div class="panel-title"><div><h3>发现资料有误或有新线索？</h3><div class="tiny muted">反馈只进入本浏览器的更新队列，状态为待审核，不会直接修改产品或进入 public-data.json。</div></div><button class="btn primary" data-action="product-feedback" data-id="${esc(p.id)}">提交信息纠错 / 补充线索</button></div></section>
         <section class="panel"><h3>备注与数据记录</h3><div class="data-list">${dataRow("备注",p.notes)}${dataRow("创建时间",formatDate(p.createdAt),true)}${dataRow("最近资料更新时间",formatDate(latestProductUpdate(p)),true)}${dataRow("审核状态",p.reviewStatus)}${dataRow("数据完整度",p.dataCompleteness+"%（"+completenessLevel(p.dataCompleteness)+"）")}</div></section>
-        <div class="notice medical-notice"><strong>产品详情免责声明：</strong>本页仅整理公开资料和人工确认记录，不构成医疗建议、营养处方或安全保证。涉及过敏、乳糖不耐受、早产、低体重或特殊医学用途配方时，请咨询儿科医生或专业营养人员。</div>`;
+        <div class="notice medical-notice"><strong>谨慎说明：</strong>本页仅供公开资料初筛；如宝宝存在过敏、消化、早产、低体重或特殊医学用途需求，请咨询医生或专业营养人员。本页不自动判断任何产品“适合某类宝宝”。</div>`;
     }
     function renderPublishedQualityEvent(e){
       const opinion=isPublicOpinionEvent(e.eventType);
@@ -1539,6 +2094,7 @@
           <div class="actions"><button class="btn" data-action="back-list">返回列表</button><button class="btn danger" data-action="clear-compare">清空对比</button></div>
         </div>
         <div class="notice"><strong>总分提示：</strong>总分不是医学结论，只是基于公开资料和人工确认规则的信息整理结果。注册状态是排行准入门槛，不参与 100 分总分。</div>
+        ${renderCompareSummary(selected)}
         <div class="compare-wrap">
           <table class="compare-table">
             <thead><tr><th>对比项目</th>${selected.map(p=>`<th><div class="compare-product-title">${esc(p.productName||"未命名")}</div><div class="badges"><span class="badge blue">${esc(p.versionType)}</span><span class="badge ${complianceClass(p.compliance.verificationStatus)}">${esc(getComplianceLabel(p.compliance.verificationStatus))}</span></div><button class="btn small danger" style="margin-top:8px" data-action="remove-compare" data-id="${esc(p.id)}">移出对比</button></th>`).join("")}</tr></thead>
@@ -1551,16 +2107,19 @@
     function confidenceClass(value){
       return value==="高"?"high":value==="中"?"medium":value==="低"?"low":"none";
     }
-    function blankFieldState(def){
-      return {value:def.type==="tri"?null:"",evidence:"",confidence:"未识别",needsConfirmation:true,confirmed:false};
+function blankFieldState(def){
+      return {value:def.type==="tri"?null:"",evidence:"",confidence:"未识别",source:"未识别",sourceDetails:"",alternatives:[],needsConfirmation:true,confirmed:false};
     }
-    function setExtractedField(fields,path,value,evidence,confidence="中"){
+function setExtractedField(fields,path,value,evidence,confidence="中",source="规则抽取"){
       if(value===undefined||value===null||String(value).trim()==="") return;
       const def=EXTRACTION_FIELDS.find(x=>x.path===path);
       fields[path]={
         value:def?.type==="tri"?triValue(value):String(value).trim(),
         evidence:String(evidence||"").trim(),
         confidence,
+        source:FIELD_SOURCE_OPTIONS.includes(source)?source:"规则抽取",
+        sourceDetails:"",
+        alternatives:[],
         needsConfirmation:true,
         confirmed:false
       };
@@ -1602,12 +2161,12 @@
       const m=text.match(regex);
       return m?m[0]:"";
     }
-    function ruleExtractText(text,sourceUrl=""){
+    function ruleExtractText(text,sourceUrl="",fieldSource="规则抽取"){
       const fields={};
       EXTRACTION_FIELDS.forEach(def=>fields[def.path]=blankFieldState(def));
       const clean=String(text||"").replace(/\u00a0/g," ").replace(/\r/g,"").trim();
       const assign=(path,result,confidence="中")=>{
-        if(result?.value) setExtractedField(fields,path,result.value,result.evidence,confidence);
+        if(result?.value) setExtractedField(fields,path,result.value,result.evidence,confidence,fieldSource);
       };
 
       assign("productName",labeledMatch(clean,["产品名称","品名","商品名称"],100),"高");
@@ -1634,21 +2193,21 @@
         ["国产",/国产|中国境内生产/]
       ];
       const version=versionKeywords.find(x=>x[1].test(clean));
-      if(version) setExtractedField(fields,"versionType",version[0],keywordEvidence(clean,version[1]),"中");
+      if(version) setExtractedField(fields,"versionType",version[0],keywordEvidence(clean,version[1]),"中",fieldSource);
 
       const reg=clean.match(/国食注字\s*[A-Z]{1,4}\s*\d{8,}/i);
-      if(reg) setExtractedField(fields,"compliance.formulaRegistrationNo",reg[0].replace(/\s+/g,""),reg[0],"高");
+      if(reg) setExtractedField(fields,"compliance.formulaRegistrationNo",reg[0].replace(/\s+/g,""),reg[0],"高",fieldSource);
       const chinaReg=labeledMatch(clean,["在华注册编号","境外生产企业注册编号","在华注册号"],80);
       assign("compliance.chinaRegistrationNo",chinaReg,"高");
 
       const ingredientSection=sectionMatch(clean,["配料表","原料表"],["营养成分表","营养信息","食用方法","冲调方法","贮存条件"]);
       if(ingredientSection.value){
-        setExtractedField(fields,"ingredients.rawText",ingredientSection.value,ingredientSection.evidence,"高");
+        setExtractedField(fields,"ingredients.rawText",ingredientSection.value,ingredientSection.evidence,"高",fieldSource);
         const first=ingredientSection.value.split(/[、，,；;\n]/).map(x=>x.trim()).filter(Boolean)[0]||"";
-        if(first) setExtractedField(fields,"ingredients.firstIngredient",first,first,"中");
+        if(first) setExtractedField(fields,"ingredients.firstIngredient",first,first,"中",fieldSource);
         const dairyTypes=["生牛乳","脱脂牛乳","全脂牛乳","脱脂乳粉","全脂乳粉","乳清粉"];
         const dairy=dairyTypes.find(x=>ingredientSection.value.includes(x));
-        if(dairy) setExtractedField(fields,"ingredients.dairyBaseType",dairy,dairy,"高");
+        if(dairy) setExtractedField(fields,"ingredients.dairyBaseType",dairy,dairy,"高",fieldSource);
 
         const flagRules=[
           ["ingredients.hasSucrose",/(白砂糖|蔗糖)/],
@@ -1661,21 +2220,21 @@
         ];
         flagRules.forEach(([path,re])=>{
           const found=ingredientSection.value.match(re);
-          fields[path]={value:!!found,evidence:found?found[0]:"在已识别的配料表片段中未检出对应关键词；仍需人工核对完整标签。",confidence:found?"高":"低",needsConfirmation:true,confirmed:false};
+          fields[path]={value:!!found,evidence:found?found[0]:"在已识别的配料表片段中未检出对应关键词；仍需人工核对完整标签。",confidence:found?"高":"低",source:fieldSource,sourceDetails:"",alternatives:[],needsConfirmation:true,confirmed:false};
         });
         const hasLactose=/乳糖/.test(ingredientSection.value);
-        fields["ingredients.hasLactose"]={value:hasLactose,evidence:hasLactose?"配料表片段识别到“乳糖”。":"在已识别的配料表片段中未检出“乳糖”；仍需人工核对完整标签。",confidence:hasLactose?"高":"低",needsConfirmation:true,confirmed:false};
+        fields["ingredients.hasLactose"]={value:hasLactose,evidence:hasLactose?"配料表片段识别到“乳糖”。":"在已识别的配料表片段中未检出“乳糖”；仍需人工核对完整标签。",confidence:hasLactose?"高":"低",source:fieldSource,sourceDetails:"",alternatives:[],needsConfirmation:true,confirmed:false};
         const hasOther=/(白砂糖|蔗糖|果糖|果葡糖浆|麦芽糊精|淀粉)/.test(ingredientSection.value);
         if(hasLactose){
-          fields["ingredients.allLactose"]={value:!hasOther,evidence:hasOther?"识别到乳糖，同时识别到其他碳水来源。":"识别到乳糖，且在当前配料表片段中未识别到白砂糖、果糖、麦芽糊精或淀粉。",confidence:hasOther?"中":"中",needsConfirmation:true,confirmed:false};
+          fields["ingredients.allLactose"]={value:!hasOther,evidence:hasOther?"识别到乳糖，同时识别到其他碳水来源。":"识别到乳糖，且在当前配料表片段中未识别到白砂糖、果糖、麦芽糊精或淀粉。",confidence:hasOther?"中":"中",source:fieldSource,sourceDetails:"",alternatives:[],needsConfirmation:true,confirmed:false};
         }
         const oilTerms=["乳脂","无水奶油","奶油","大豆油","菜籽油","葵花籽油","椰子油","棕榈油","玉米油","低芥酸菜籽油"];
         const oils=oilTerms.filter(x=>ingredientSection.value.includes(x));
-        if(oils.length) setExtractedField(fields,"ingredients.fatSources",oils.join("、"),oils.join("、"),"中");
+        if(oils.length) setExtractedField(fields,"ingredients.fatSources",oils.join("、"),oils.join("、"),"中",fieldSource);
       }
 
       const nutritionSection=sectionMatch(clean,["营养成分表","营养信息"],["配料表","冲调方法","食用方法","贮存条件","注意事项"]);
-      if(nutritionSection.value) setExtractedField(fields,"nutrition.rawText",nutritionSection.value,nutritionSection.evidence,"高");
+      if(nutritionSection.value) setExtractedField(fields,"nutrition.rawText",nutritionSection.value,nutritionSection.evidence,"高",fieldSource);
       const nutritionText=nutritionSection.value||clean;
       const amountDefs=[
         ["nutrition.basic.energy",["能量"]],
@@ -1697,20 +2256,19 @@
       const mineralTerms=["钙","磷","铁","锌","硒","碘","铜","锰","镁","钠","钾","氯"];
       const vitamins=vitaminTerms.filter(x=>nutritionText.includes(x));
       const minerals=mineralTerms.filter(x=>new RegExp(`(^|[^A-Za-z])${escapeRegExp(x)}([^A-Za-z]|$)`).test(nutritionText));
-      if(vitamins.length) setExtractedField(fields,"nutrition.basic.vitamins",vitamins.join("、"),vitamins.join("、"),"中");
-      if(minerals.length) setExtractedField(fields,"nutrition.basic.minerals",minerals.join("、"),minerals.join("、"),"中");
+      if(vitamins.length) setExtractedField(fields,"nutrition.basic.vitamins",vitamins.join("、"),vitamins.join("、"),"中",fieldSource);
+      if(minerals.length) setExtractedField(fields,"nutrition.basic.minerals",minerals.join("、"),minerals.join("、"),"中",fieldSource);
 
       const probioticTerms=["益生菌","双歧杆菌","乳双歧杆菌","鼠李糖乳杆菌","低聚半乳糖","GOS","低聚果糖","FOS","益生元"];
       const probioticFound=probioticTerms.filter(x=>new RegExp(escapeRegExp(x),"i").test(clean));
-      if(probioticFound.length) setExtractedField(fields,"nutrition.probioticsPrebiotics",probioticFound.join("、"),probioticFound.join("、"),"中");
+      if(probioticFound.length) setExtractedField(fields,"nutrition.probioticsPrebiotics",probioticFound.join("、"),probioticFound.join("、"),"中",fieldSource);
       const fortificationTerms=["DHA","ARA","OPO","乳铁蛋白","HMO","胆碱","牛磺酸","核苷酸","叶黄素","肌醇","左旋肉碱"];
       const fortificationFound=fortificationTerms.filter(x=>new RegExp(escapeRegExp(x),"i").test(clean));
-      if(fortificationFound.length) setExtractedField(fields,"nutrition.otherFortification",fortificationFound.join("、"),fortificationFound.join("、"),"中");
-      if(sourceUrl) setExtractedField(fields,"sourceUrl",sourceUrl,sourceUrl,"高");
+      if(fortificationFound.length) setExtractedField(fields,"nutrition.otherFortification",fortificationFound.join("、"),fortificationFound.join("、"),"中",fieldSource);
+      if(sourceUrl) setExtractedField(fields,"sourceUrl",sourceUrl,sourceUrl,"高",fieldSource);
 
       return {fields,suggestions:generateSuggestions(fields)};
-    }
-    function extractedValue(fields,path){
+    }    function extractedValue(fields,path){
       return fields?.[path]?.value;
     }
     function generateSuggestions(fields){
@@ -1741,12 +2299,302 @@
       return {advantages,cautions};
     }
 
-    async function getAIExtraction(input){
+    function defaultAIConfig(){
       return {
-        status:"not_connected",
-        message:"待接入 AI 服务：当前单文件版本不会伪造图片 OCR 或视觉识别结果。上传图片将作为原始证据保存，并生成可人工填写的待确认表单。",
-        fields:{}
+        enabled:false,
+        provider:"openaiCompatible",
+        endpoint:"",
+        apiKey:"",
+        model:"gpt-4o-mini",
+        systemPrompt:"你是婴幼儿配方奶粉标签 OCR 与资料抽取助手。请只根据图片或粘贴文本返回 JSON，不要编造未出现的信息。所有字段都必须等待人工确认。",
+        fieldAliasesText:"{}"
       };
+    }
+    function loadAIConfig(){
+      try{
+        return mergeDefaults(JSON.parse(localStorage.getItem(AI_CONFIG_STORAGE_KEY)||"{}"),defaultAIConfig());
+      }catch(_){
+        return defaultAIConfig();
+      }
+    }
+    function saveAIConfig(config){
+      state.aiConfig=mergeDefaults(config||{},defaultAIConfig());
+      localStorage.setItem(AI_CONFIG_STORAGE_KEY,JSON.stringify(state.aiConfig));
+    }
+    function isAIConfigReady(config=state.aiConfig){
+      return !!(config?.enabled && config.endpoint && config.model);
+    }
+    function aiConfigStatusLabel(config=state.aiConfig){
+      if(!config?.enabled) return "未启用：上传图片只保存原始证据";
+      if(!config.endpoint) return "已启用但缺少接口地址";
+      if(!config.model) return "已启用但缺少模型名";
+      return `已启用：${config.model}`;
+    }
+    function getFieldAliasInfo(text=state.aiConfig?.fieldAliasesText||"{}"){
+      const validPaths=new Set(EXTRACTION_FIELDS.map(def=>def.path));
+      const result={map:{},warnings:[],error:""};
+      const raw=String(text||"").trim();
+      if(!raw) return result;
+      let parsed;
+      try{parsed=JSON.parse(raw);}catch(err){result.error="字段别名映射不是有效 JSON，已忽略。";return result;}
+      if(!parsed||Array.isArray(parsed)||typeof parsed!=="object"){
+        result.error="字段别名映射必须是 JSON 对象，已忽略。";return result;
+      }
+      Object.entries(parsed).forEach(([alias,path])=>{
+        const cleanAlias=String(alias||"").trim(),cleanPath=String(path||"").trim();
+        if(!cleanAlias||!validPaths.has(cleanPath)){
+          result.warnings.push(`${cleanAlias||"空别名"} → ${cleanPath||"空路径"} 无效`);
+          return;
+        }
+        result.map[cleanAlias]=cleanPath;
+      });
+      return result;
+    }
+    function renderAliasStatus(config){
+      const info=getFieldAliasInfo(config?.fieldAliasesText);
+      if(info.error) return `<div class="alias-help"><span class="badge warn">映射已忽略</span> ${esc(info.error)}</div>`;
+      const count=Object.keys(info.map).length;
+      const warning=info.warnings.length?`；忽略 ${info.warnings.length} 条无效映射` : "";
+      return `<div class="alias-help">当前有效别名 ${count} 条${esc(warning)}。映射只保存在本浏览器，不进入公共数据。</div>`;
+    }
+    function renderAITestStatus(result=state.aiTestResult){
+      if(!result) return `<div class="ai-test-status">尚未测试连接。测试不会写入产品库，也不会创建 EvidenceRecord。</div>`;
+      return `<div class="ai-test-status ${esc(result.kind||"")}"><b>${esc(result.label||"测试结果")}</b><div class="tiny" style="margin-top:5px">${esc(result.detail||"")}</div></div>`;
+    }
+
+    function renderAIConfigDetails(open=false){
+      const c=state.aiConfig||defaultAIConfig();
+      return `<details class="ai-config-details" data-ai-config-panel ${open?"open":""}>
+        <summary>AI / OCR 接入设置（本浏览器）<span>${esc(aiConfigStatusLabel(c))}</span></summary>
+        <div class="ai-config-grid">
+          <div class="field"><label>启用图片 AI/OCR</label><select name="aiEnabled"><option value="false" ${!c.enabled?"selected":""}>不启用，仅保存图片证据</option><option value="true" ${c.enabled?"selected":""}>启用，上传图片时调用接口</option></select></div>
+          <div class="field"><label>接口类型</label><select name="aiProvider"><option value="openaiCompatible" ${c.provider==="openaiCompatible"?"selected":""}>OpenAI 兼容 Chat Completions / 后端代理</option></select></div>
+          <div class="field span-2"><label>接口地址</label><input type="url" name="aiEndpoint" value="${esc(c.endpoint)}" placeholder="https://api.openai.com/v1/chat/completions 或你的 Cloudflare Worker 代理地址"></div>
+          <div class="field"><label>模型名</label><input name="aiModel" value="${esc(c.model)}" placeholder="gpt-4o-mini / qwen-vl-plus / 你的视觉模型"></div>
+          <div class="field"><label>API Key（仅保存在本浏览器）</label><input type="password" name="aiApiKey" value="${esc(c.apiKey)}" placeholder="建议使用后端代理，避免前端暴露密钥"></div>
+          <div class="field span-2"><label>系统提示词</label><textarea name="aiSystemPrompt" style="min-height:88px">${esc(c.systemPrompt)}</textarea></div>
+          <div class="field span-2"><label>字段别名映射（可选 JSON）</label><textarea name="aiFieldAliases" style="min-height:120px" placeholder='{"奶粉名称":"productName","品牌名称":"brand","配方注册号":"compliance.formulaRegistrationNo"}'>${esc(c.fieldAliasesText||"{}")}</textarea>${renderAliasStatus(c)}</div>
+        </div>
+        <div class="ai-config-actions">
+          <button type="button" class="btn soft" data-action="save-ai-config">保存 AI / OCR 设置</button>
+          <button type="button" class="btn primary" data-action="test-ai-connection">测试连接</button>
+          <button type="button" class="btn" data-action="reset-ai-config">清空设置</button>
+        </div>
+        <div data-ai-test-result>${renderAITestStatus()}</div>
+        <div class="ai-config-note"><b>安全提示：</b>静态 Cloudflare Pages 没有内置后端。公开部署不建议在前端保存真实 API Key；推荐使用后端代理或 Cloudflare Worker 代理，由代理安全保存密钥并处理跨域。</div>
+      </details>`;
+    }
+    function readAIConfigPanel(panel){
+      return {
+        enabled:panel.querySelector('[name="aiEnabled"]')?.value==="true",
+        provider:panel.querySelector('[name="aiProvider"]')?.value||"openaiCompatible",
+        endpoint:panel.querySelector('[name="aiEndpoint"]')?.value.trim()||"",
+        apiKey:panel.querySelector('[name="aiApiKey"]')?.value.trim()||"",
+        model:panel.querySelector('[name="aiModel"]')?.value.trim()||"",
+        systemPrompt:panel.querySelector('[name="aiSystemPrompt"]')?.value.trim()||defaultAIConfig().systemPrompt,
+        fieldAliasesText:panel.querySelector('[name="aiFieldAliases"]')?.value||"{}"
+      };
+    }
+    function saveAIConfigFromPanel(panel){
+      if(!panel) return;
+      const config=readAIConfigPanel(panel);
+      if(config.enabled && !config.endpoint){
+        alert("启用 AI/OCR 前请填写接口地址；如果暂时不用，请选择“不启用”。");
+        return;
+      }
+      saveAIConfig(config);
+      const aliasInfo=getFieldAliasInfo(config.fieldAliasesText);
+      toast(aliasInfo.error||aliasInfo.warnings.length?"AI / OCR 设置已保存；无效字段映射已忽略":"AI / OCR 设置已保存");
+      render();
+    }
+    function buildAIExtractionPrompt(input){
+      const fields=EXTRACTION_FIELDS.map(def=>`- ${def.path}：${def.label}`).join("\n");
+      return `请对婴幼儿配方奶粉标签、配料表、营养成分表或产品详情图做 OCR 与结构化抽取。\n\n返回严格 JSON，不要使用 Markdown。格式：{\"rawText\":\"完整 OCR 原文\",\"fields\":{\"字段路径\":{\"value\":\"字段值\",\"evidence\":\"证据原文\",\"confidence\":\"高/中/低\"}}}\n\n只填写你在图片或文本中确实看到的内容，不要推测；未识别字段不要返回。允许字段路径：\n${fields}\n\n来源链接：${input.sourceUrl||"无"}\n用户粘贴文本：${input.text||"无"}`;
+    }
+    function buildAIRequestPayload(input,config){
+      const content=[{type:"text",text:buildAIExtractionPrompt(input)}];
+      (input.images||[]).forEach(url=>{
+        if(url) content.push({type:"image_url",image_url:{url}});
+      });
+      return {
+        model:config.model,
+        temperature:0,
+        response_format:{type:"json_object"},
+        messages:[
+          {role:"system",content:config.systemPrompt||defaultAIConfig().systemPrompt},
+          {role:"user",content}
+        ]
+      };
+    }
+    function extractAIMessageContent(data){
+      if(typeof data?.choices?.[0]?.message?.content==="string") return data.choices[0].message.content;
+      if(Array.isArray(data?.choices?.[0]?.message?.content)) return data.choices[0].message.content.map(x=>x.text||x.content||"").join("\n");
+      if(typeof data?.output_text==="string") return data.output_text;
+      if(typeof data?.text==="string") return data.text;
+      if(typeof data?.rawText==="string" || data?.fields) return JSON.stringify(data);
+      return "";
+    }
+    function parseAIJson(content){
+      const trimmed=String(content||"").trim().replace(/^```(?:json)?/i,"").replace(/```$/i,"").trim();
+      try{return JSON.parse(trimmed);}catch(_){
+        const start=trimmed.indexOf("{"),end=trimmed.lastIndexOf("}");
+        if(start>=0&&end>start){
+          try{return JSON.parse(trimmed.slice(start,end+1));}catch(__){}
+        }
+      }
+      return {rawText:trimmed,fields:{}};
+    }
+function resolveAIFieldKey(key){
+      const clean=String(key||"").trim();
+      const direct=EXTRACTION_FIELDS.find(def=>def.path===clean);
+      if(direct) return {path:direct.path,priority:3,source:"系统字段路径"};
+      const builtIn=EXTRACTION_FIELDS.find(def=>def.label===clean);
+      if(builtIn) return {path:builtIn.path,priority:2,source:"内置中文标签"};
+      const aliases=getFieldAliasInfo().map;
+      if(aliases[clean]) return {path:aliases[clean],priority:1,source:"用户字段别名"};
+      return null;
+    }
+function normalizeAIFields(rawFields){
+      const out={},chosenPriority={};
+      Object.entries(rawFields||{}).forEach(([key,raw])=>{
+        const resolved=resolveAIFieldKey(key);
+        if(!resolved||chosenPriority[resolved.path]>=resolved.priority) return;
+        const def=EXTRACTION_FIELDS.find(x=>x.path===resolved.path);
+        const value=raw&&typeof raw==="object"&&!(raw instanceof Array)?raw.value:raw;
+        if(value===undefined||value===null||String(value).trim()==="") return;
+        out[resolved.path]={
+          value:def?.type==="tri"?triValue(value):String(value).trim(),
+          evidence:String((raw&&typeof raw==="object"?raw.evidence:"")||"AI/OCR 返回字段").trim(),
+          confidence:["高","中","低"].includes(raw?.confidence)?raw.confidence:"中",
+          source:"AI OCR",sourceDetails:`AI/OCR 结构化返回；字段键通过${resolved.source}解析`,alternatives:[],
+          needsConfirmation:true,confirmed:false
+        };
+        chosenPriority[resolved.path]=resolved.priority;
+      });
+      return out;
+    }
+function mergeCandidateFields(base,incomingFields){
+      const rank={未识别:0,低:1,中:2,高:3};
+      Object.entries(incomingFields||{}).forEach(([path,incoming])=>{
+        const existing=base[path];
+        const existingHas=existing&&existing.value!==null&&existing.value!==undefined&&String(existing.value).trim()!=="";
+        if(!existingHas||(rank[incoming.confidence]||0)>(rank[existing.confidence]||0)) base[path]=incoming;
+        else if(incoming.value!==null&&incoming.value!==undefined&&String(incoming.value).trim()!==""){
+          const same=String(existing.value)===String(incoming.value);
+          existing.alternatives=[...(existing.alternatives||[]),...(same?[]:[{value:incoming.value,evidence:incoming.evidence,confidence:incoming.confidence,source:incoming.source}])];
+          existing.sourceDetails=same?`${existing.source} 与 ${incoming.source} 结果一致。`:`同时存在 ${incoming.source} 候选结果，当前按置信度保留 ${existing.source}。`;
+        }
+      });
+      return base;
+    }
+    function mergeAIFields(fields,aiFields){
+      const normalized=normalizeAIFields(aiFields);
+      const rank={未识别:0,低:1,中:2,高:3};
+      Object.entries(normalized).forEach(([path,incoming])=>{
+        const existing=fields[path]||blankFieldState(EXTRACTION_FIELDS.find(x=>x.path===path)||{});
+        const existingHas=existing.value!==null&&existing.value!==undefined&&String(existing.value).trim()!=="";
+        if(!existingHas||existing.confidence==="未识别"){fields[path]=incoming;return;}
+        const same=String(existing.value)===String(incoming.value);
+        const incomingWins=(rank[incoming.confidence]||0)>(rank[existing.confidence]||0);
+        const winner=incomingWins?incoming:existing,other=incomingWins?existing:incoming;
+        const alternatives=[...(winner.alternatives||[])];
+        if(!same) alternatives.push({value:other.value,evidence:other.evidence,confidence:other.confidence,source:other.source});
+        fields[path]={
+          ...winner,
+          alternatives,
+          sourceDetails:same
+            ?`规则抽取与 AI OCR 结果一致；当前采用 ${winner.source}（${winner.confidence}置信度）。`
+            :`规则抽取与 AI OCR 均有结果；按置信度采用 ${winner.source}（${winner.confidence}），另一个结果保留在候选记录中。`
+        };
+      });
+      return fields;
+    }
+    function mergeExtractionText(userText,aiText){
+      const a=String(userText||"").trim(),b=String(aiText||"").trim();
+      if(!a) return b;
+      if(!b || a.includes(b) || b.includes(a)) return a.length>=b.length?a:b;
+      return `${a}\n\n【AI/OCR 识别文本】\n${b}`;
+    }
+    function buildAITestPayload(config){
+      const tinyPng="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAusB9Wl2jM8AAAAASUVORK5CYII=";
+      return {
+        model:config.model,temperature:0,response_format:{type:"json_object"},
+        messages:[
+          {role:"system",content:"Return strict JSON only."},
+          {role:"user",content:[{type:"text",text:'这是连接测试。请识别图片并只返回 {"ok":true}。不要添加其他文字。'},{type:"image_url",image_url:{url:tinyPng}}]}
+        ]
+      };
+    }
+    function strictParseJsonText(content){
+      const trimmed=String(content||"").trim().replace(/^```(?:json)?/i,"").replace(/```$/i,"").trim();
+      if(!trimmed) throw new Error("empty");
+      return JSON.parse(trimmed);
+    }
+    function classifyAIHTTPError(status,message){
+      const lower=String(message||"").toLowerCase();
+      if(status===401||status===403||/api.?key|unauthorized|authentication|invalid.?key/.test(lower)) return {kind:"danger",label:"API Key 错误",detail:`接口返回 HTTP ${status}：${message||"鉴权失败"}`};
+      if(/model|vision|image|image_url|response_format|unsupported|not support|invalid request|格式/.test(lower)||[400,404,415,422].includes(status)) return {kind:"danger",label:"模型不支持图片或请求格式不兼容",detail:`接口返回 HTTP ${status}：${message||"请检查模型能力和兼容格式"}`};
+      return {kind:"danger",label:"网络失败",detail:`接口返回 HTTP ${status}：${message||"请求失败"}`};
+    }
+    async function testAIConnection(config){
+      if(!config.endpoint||!config.model) return {kind:"warn",label:"模型不支持图片或请求格式不兼容",detail:"请先填写接口地址和模型名。测试不会保存当前输入。"};
+      try{
+        const headers={"Content-Type":"application/json"};
+        if(config.apiKey) headers.Authorization=`Bearer ${config.apiKey}`;
+        const response=await fetch(config.endpoint,{method:"POST",headers,body:JSON.stringify(buildAITestPayload(config))});
+        const raw=await response.text();
+        let data;
+        try{data=JSON.parse(raw);}catch(_){
+          return {kind:"danger",label:"返回内容不是 JSON",detail:`接口返回 HTTP ${response.status}，但响应体不是可解析 JSON。`};
+        }
+        const apiMessage=data?.error?.message||data?.message||"";
+        if(!response.ok) return classifyAIHTTPError(response.status,apiMessage);
+        const content=extractAIMessageContent(data);
+        try{strictParseJsonText(content);}catch(_){
+          return {kind:"danger",label:"返回内容不是 JSON",detail:"接口连接成功，但模型输出不是要求的 JSON；请检查模型、代理或 response_format 兼容性。"};
+        }
+        return {kind:"ok",label:"成功",detail:"接口、模型和图片请求格式已返回可解析 JSON。测试结果未写入产品库或证据记录。"};
+      }catch(err){
+        let crossOrigin=false;
+        try{crossOrigin=new URL(config.endpoint,location.href).origin!==location.origin;}catch(_){}
+        if(crossOrigin&&/failed to fetch|networkerror|load failed|fetch/i.test(String(err?.message||err))) return {kind:"danger",label:"CORS 失败或疑似 CORS",detail:"浏览器未能读取跨域响应。请检查接口的 Access-Control-Allow-Origin，或改用 Cloudflare Worker/后端代理。"};
+        return {kind:"danger",label:"网络失败",detail:`无法连接接口：${err?.message||"未知网络错误"}`};
+      }
+    }
+    async function testAIConnectionFromPanel(button){
+      const panel=button.closest("[data-ai-config-panel]");
+      if(!panel) return;
+      const status=panel.querySelector("[data-ai-test-result]");
+      const config=readAIConfigPanel(panel);
+      button.disabled=true;
+      if(status) status.innerHTML='<div class="ai-test-status warn"><b>正在测试</b><div class="tiny" style="margin-top:5px">发送最小图片 JSON 请求；不会保存设置或创建证据。</div></div>';
+      const result=await testAIConnection(config);
+      state.aiTestResult=result;
+      button.disabled=false;
+      if(status) status.innerHTML=renderAITestStatus(result);
+    }
+
+    async function getAIExtraction(input){
+      const config=state.aiConfig||loadAIConfig();
+      if(!config.enabled){
+        return {status:"disabled",message:"AI/OCR 未启用：图片已作为原始证据保存，可人工填写或粘贴 OCR 原文。",fields:{},rawText:""};
+      }
+      if(!isAIConfigReady(config)){
+        return {status:"not_configured",message:"AI/OCR 已启用但接口地址或模型名未填写：请在“AI / OCR 接入设置”中补充。",fields:{},rawText:""};
+      }
+      try{
+        const headers={"Content-Type":"application/json"};
+        if(config.apiKey) headers.Authorization=`Bearer ${config.apiKey}`;
+        const response=await fetch(config.endpoint,{method:"POST",headers,body:JSON.stringify(buildAIRequestPayload(input,config))});
+        const data=await response.json().catch(()=>({}));
+        if(!response.ok) throw new Error(data?.error?.message||data?.message||`HTTP ${response.status}`);
+        const parsed=parseAIJson(extractAIMessageContent(data));
+        const rawText=parsed.rawText||parsed.ocrText||parsed.text||"";
+        const fields=parsed.fields||parsed.extractedFields||{};
+        return {status:"connected",message:"AI/OCR 已调用并返回结果；所有字段仍需人工逐项确认。",fields,rawText};
+      }catch(err){
+        return {status:"error",message:`AI/OCR 调用失败：${err.message}。图片已保存为原始证据，可先人工填写或粘贴 OCR 原文。`,fields:{},rawText:""};
+      }
     }
     window.getAIExtraction=getAIExtraction;
 
@@ -1777,19 +2625,35 @@
     function sourceTypeOptions(selected){
       return SOURCE_TYPES.map(x=>`<option value="${esc(x.value)}" ${selected===x.value?"selected":""}>${esc(x.value)}（${x.level}）</option>`).join("");
     }
-    function renderExtractionWorkspace(){
+
+    function renderExtractionSteps(activeStep){
+      const steps=[
+        ["上传/粘贴证据","保存图片与原始文本"],
+        ["系统预填","区分规则抽取与 AI OCR"],
+        ["人工确认入库","勾选确认后才写入正式产品"]
+      ];
+      return `<div class="workflow-steps">${steps.map((step,index)=>{const n=index+1,cls=n<activeStep?"done":n===activeStep?"active":"";return `<div class="workflow-step ${cls}" data-step="${n}"><b>${esc(step[0])}</b><span>${esc(step[1])}</span></div>`;}).join("")}</div>`;
+    }
+    function renderFieldTrace(field){
+      const alternatives=Array.isArray(field.alternatives)?field.alternatives:[];
+      const alt=alternatives.length?`候选：${alternatives.map(x=>`${x.source||"未知来源"}「${String(x.value??"").slice(0,60)}」(${x.confidence||"未识别"})`).join("；")}`:"";
+      return [field.sourceDetails,alt].filter(Boolean).join(" ");
+    }
+
+function renderExtractionWorkspace(){
       const prefill=state.extractionPrefill||{};
       return `
         ${renderNotices()}
         <div class="page-head">
-          <div><h2>资料抽取工作台</h2><p>上传截图或粘贴文字，先生成待确认记录；任何内容都不会自动写入正式产品库。</p></div>
+          <div><h2>录入资料</h2><p>按三步完成：保存证据、系统预填、人工确认入库。</p></div>
           <div class="actions"><button class="btn" data-action="open-history">查看抽取历史</button><button class="btn" data-action="back-list">返回资料库</button></div>
         </div>
-        <div class="pending-banner"><b>人工确认是强制步骤：</b>图片 OCR / 视觉模型尚未接入时，系统只保存原图证据并返回“待接入 AI 服务”；粘贴文本可用关键词规则做初步抽取，但所有字段仍需逐项确认。</div>
+        ${renderExtractionSteps(1)}
+        <div class="pending-banner"><b>录入边界：</b>图片会作为原始证据保存在本浏览器；未接入 AI/OCR 时不会伪造 OCR。规则抽取和 AI/OCR 只生成待确认草稿，任何字段都必须人工勾选确认后才写入正式产品。</div>
         <form id="extractionInputForm">
           <div class="workspace-grid">
             <section class="panel">
-              <h3>1. 输入资料</h3>
+              <h3>1）上传 / 粘贴证据</h3>
               <div class="field"><label>输入类型</label><select name="inputType">
                 <option value="image">上传配料表 / 营养表 / 产品详情长图</option>
                 <option value="webText">粘贴品牌官网或官方店页面文本</option>
@@ -1797,14 +2661,14 @@
               </select></div>
               <div class="drop-zone" id="imageDropZone" style="margin-top:12px">
                 <b>选择或拖入截图</b>
-                <p class="muted tiny">最多 3 张；保存前会压缩。当前版本不伪造 OCR 结果。</p>
+                <p class="muted tiny">最多 3 张；保存前会压缩。图片会保留为 EvidenceRecord 原始证据。</p>
                 <input type="file" id="evidenceImages" name="evidenceImages" accept="image/*" multiple>
                 <div id="filePreview" class="file-preview"></div>
               </div>
               <div class="field" style="margin-top:12px"><label>网页文本 / OCR 原文</label><textarea name="sourceText" style="min-height:260px" placeholder="粘贴完整配料表、营养成分表、生产企业、注册号等原文。规则抽取只做初筛。">${esc(prefill.text||"")}</textarea></div>
             </section>
             <section class="panel">
-              <h3>2. 来源与关联方式</h3>
+              <h3>证据来源与预填方式</h3>
               <div class="form-grid" style="grid-template-columns:1fr 1fr">
                 <div class="field span-2"><label>来源链接</label><input type="url" name="sourceUrl" value="${esc(prefill.sourceUrl||"")}" placeholder="https://..."></div>
                 <div class="field"><label>来源类型</label><select name="sourceType" id="sourceTypeSelect">${sourceTypeOptions(prefill.sourceType||"品牌官网")}</select></div>
@@ -1815,11 +2679,13 @@
                 </select></div>
                 <div class="field span-2"><label>备注</label><textarea name="notes" placeholder="如：罐身背标、官网详情页、线下拍摄日期等">${esc(prefill.notes||"")}</textarea></div>
               </div>
-              <div class="extract-status warn">
-                <b>图片识别状态</b>
-                <p class="tiny">已提供 <code>getAIExtraction()</code> 占位函数。未接入外部视觉模型或 OCR 前，函数只返回“待接入 AI 服务”，不会生成虚假字段。</p>
+              <div class="extract-status ${isAIConfigReady()?"ok":"warn"}">
+                <b>系统预填方式</b>
+                <p class="tiny">粘贴文字会运行规则抽取；图片只有在启用并配置接口后才会调用 AI/OCR。待确认表单会逐字段显示来源，不会把两类结果混成不可追溯的数据。</p>
+                <div class="badges"><span class="badge blue">规则抽取：可用</span><span class="badge ${isAIConfigReady()?"ok":"warn"}">AI/OCR：${esc(aiConfigStatusLabel())}</span></div>
               </div>
-              <button type="submit" class="btn primary" style="width:100%">生成待确认表单</button>
+              ${renderAIConfigDetails(false)}
+              <button type="submit" class="btn primary" style="width:100%;margin-top:12px">进入第 2 步：生成系统预填</button>
             </section>
           </div>
         </form>`;
@@ -1831,7 +2697,7 @@
       if(def.type==="tri") return `<select class="extract-value">${optionList(TRI_OPTIONS,String(value===null||value===undefined?"":value),null)}</select>`;
       return `<input class="extract-value" type="${def.type==="url"?"url":"text"}" value="${esc(value??"")}">`;
     }
-    function renderExtractionReview(){
+function renderExtractionReview(){
       const record=state.evidenceRecords.find(x=>x.evidenceId===state.extractionId);
       if(!record) return `${renderNotices()}<div class="empty"><h3>抽取记录不存在</h3><button class="btn" data-action="open-history">返回抽取历史</button></div>`;
       const grouped={};
@@ -1840,13 +2706,14 @@
       return `
         ${renderNotices()}
         <div class="page-head">
-          <div><h2>待确认表单</h2><p>已识别 ${detected} 个字段。只有勾选“用户确认”且点击“确认并保存”的字段才会写入产品资料。</p></div>
+          <div><h2>系统预填与人工确认</h2><p>已预填 ${detected} 个字段。每个字段都显示规则抽取、AI OCR、人工填写或未识别来源。</p></div>
           <div class="actions"><button class="btn" data-action="open-history">返回历史</button><button class="btn" data-action="new-extraction">新建抽取</button></div>
         </div>
-        <div class="pending-banner"><b>当前状态：${esc(getEvidenceStatusLabel(record.status))}</b>。规则抽取、图片 OCR 和建议项都不是正式结论；合规注册状态不会因识别到注册号而自动变成“已核验”。</div>
+        ${renderExtractionSteps(2)}
+        <div class="pending-banner"><b>当前状态：${esc(getEvidenceStatusLabel(record.status))}</b>。同一字段存在多个候选时，系统按置信度保留当前值并保留候选来源；合规状态不会因识别到注册号而自动变成“已核验”。</div>
         <form id="extractionReviewForm" data-id="${esc(record.evidenceId)}">
           <section class="panel">
-            <div class="panel-title"><h3>原始证据与来源</h3><span class="badge ${evidenceStatusClass(record.status)}">${esc(getEvidenceStatusLabel(record.status))}</span></div>
+            <div class="panel-title"><h3>第 1 步证据回看</h3><span class="badge ${evidenceStatusClass(record.status)}">${esc(getEvidenceStatusLabel(record.status))}</span></div>
             <div class="evidence-meta">
               <div class="field"><label>输入类型</label><input value="${esc(record.inputType)}" disabled></div>
               <div class="field"><label>来源类型</label><select name="sourceType">${sourceTypeOptions(record.sourceType)}</select></div>
@@ -1860,37 +2727,39 @@
               <div class="field span-4"><label>记录备注</label><textarea name="recordNotes">${esc(record.notes||"")}</textarea></div>
             </div>
             ${record.inputSource.images?.length?`<h4>上传图片证据</h4><div class="evidence-images">${record.inputSource.images.map((img,i)=>`<a href="${esc(img)}" target="_blank" rel="noopener"><img src="${esc(img)}" alt="证据图片 ${i+1}"></a>`).join("")}</div>`:""}
-            <details style="margin-top:12px" ${record.originalOcrText?"open":""}><summary><b>原始 OCR / 粘贴文本</b></summary><div class="raw-evidence">${esc(record.originalOcrText||"未提供文字。图片 OCR 尚未接入，需人工填写或后续接入 AI 服务。")}</div></details>
-            <div class="extract-status ${record.aiStatus?.includes("待接入")?"warn":"ok"}"><b>AI / OCR 状态：</b>${esc(record.aiStatus||"规则抽取完成")}</div>
+            <details style="margin-top:12px" ${record.originalOcrText?"open":""}><summary><b>原始 OCR / 粘贴文本</b></summary><div class="raw-evidence">${esc(record.originalOcrText||"未提供文字。图片 OCR 未启用或未返回文本，需人工填写、粘贴 OCR 原文，或在 AI/OCR 设置中接入服务。")}</div></details>
+            <div class="extract-status ${record.aiStatus?.includes("失败")||record.aiStatus?.includes("未启用")||record.aiStatus?.includes("未填写")?"warn":"ok"}"><b>AI / OCR 状态：</b>${esc(record.aiStatus||"规则抽取完成")}</div>
           </section>
-
+    
+          <div class="panel-title" style="margin-top:18px"><div><h3>第 2 步：系统预填</h3><div class="tiny muted">编辑系统值时，字段来源会自动切换为“人工填写”；原候选结果仍保留在证据记录中。</div></div></div>
           ${Object.entries(grouped).map(([group,defs])=>`
             <section class="extract-group"><h3>${esc(group)}</h3>
               ${defs.map(def=>{
-                const f=record.extractedFields[def.path]||blankFieldState(def);
+                const f=record.extractedFields[def.path]||blankFieldState(def),trace=renderFieldTrace(f);
                 return `<div class="extract-field-row" data-field-path="${esc(def.path)}" data-field-type="${esc(def.type||"text")}">
                   <div class="extract-label">${esc(def.label)}<div class="field-help">${esc(def.path)}</div></div>
                   <div>${extractionInputControl(def,f)}<div class="field-help">抽取值，可编辑</div></div>
-                  <div><textarea class="extract-evidence" placeholder="原文依据">${esc(f.evidence||"")}</textarea></div>
-                  <div class="confidence-cell"><select class="extract-confidence">${CONFIDENCE_OPTIONS.map(x=>`<option value="${x}" ${f.confidence===x?"selected":""}>${x}</option>`).join("")}</select><div class="confidence ${confidenceClass(f.confidence)}" style="margin-top:6px">${esc(f.confidence)}</div></div>
+                  <div><textarea class="extract-evidence" placeholder="原文依据">${esc(f.evidence||"")}</textarea>${trace?`<div class="field-source-note">${esc(trace)}</div>`:""}</div>
+                  <div class="confidence-cell field-source-stack">
+                    <select class="extract-source">${FIELD_SOURCE_OPTIONS.map(x=>`<option value="${x}" ${f.source===x?"selected":""}>${x}</option>`).join("")}</select>
+                    <select class="extract-confidence">${CONFIDENCE_OPTIONS.map(x=>`<option value="${x}" ${f.confidence===x?"selected":""}>置信度：${x}</option>`).join("")}</select>
+                  </div>
                   <div class="confirm-box"><label><input type="checkbox" class="extract-needs" ${f.needsConfirmation?"checked":""}> 需要人工确认</label><label><input type="checkbox" class="extract-confirmed" ${f.confirmed?"checked":""}> 用户确认</label></div>
                 </div>`;
               }).join("")}
             </section>`).join("")}
-
+    
           <section class="panel">
             <div class="panel-title"><h3>建议优势与建议注意事项</h3><button type="button" class="btn small soft" data-action="refresh-suggestions">根据已确认字段重新生成</button></div>
             <p class="muted tiny">初次结果仅是规则草稿。建议优先勾选并确认上方字段，再重新生成；建议项仍必须勾选“人工确认采用”后才会显示在产品详情页。</p>
             <div class="suggestion-grid">
-              <div>
-                <h4>建议优势</h4>
-                <div id="suggestedAdvantages">${record.suggestedAdvantages.length?record.suggestedAdvantages.map((x,i)=>renderExtractionSuggestion(x,"advantage",i)).join(""):`<div class="muted tiny">暂无建议优势。</div>`}</div>
-              </div>
-              <div>
-                <h4>建议注意事项</h4>
-                <div id="suggestedCautions">${record.suggestedCautions.length?record.suggestedCautions.map((x,i)=>renderExtractionSuggestion(x,"caution",i)).join(""):`<div class="muted tiny">暂无建议注意事项。</div>`}</div>
-              </div>
+              <div><h4>建议优势</h4><div id="suggestedAdvantages">${record.suggestedAdvantages.length?record.suggestedAdvantages.map((x,i)=>renderExtractionSuggestion(x,"advantage",i)).join(""):`<div class="muted tiny">暂无建议优势。</div>`}</div></div>
+              <div><h4>建议注意事项</h4><div id="suggestedCautions">${record.suggestedCautions.length?record.suggestedCautions.map((x,i)=>renderExtractionSuggestion(x,"caution",i)).join(""):`<div class="muted tiny">暂无建议注意事项。</div>`}</div></div>
             </div>
+          </section>
+          <section class="panel">
+            <h3>第 3 步：人工确认入库</h3>
+            <p class="muted">只有勾选“用户确认”的字段会写入产品库。未确认字段、候选值和原始图片继续保留在 EvidenceRecord，不会成为正式产品资料。</p>
           </section>
           <div class="save-bar">
             <div><b>确认前不会写入正式产品库</b><div class="tiny muted">可先保存待确认草稿，稍后从抽取历史继续。</div></div>
@@ -1936,21 +2805,24 @@
           </article>`;
         }).join("")}</div>`:`<div class="empty"><h3>还没有抽取记录</h3><p class="muted">上传截图或粘贴文本后，系统会先创建 EvidenceRecord，再进入人工确认。</p><button class="btn primary" data-action="new-extraction">开始第一次抽取</button></div>`}`;
     }
-    function readExtractionReviewForm(form,record){
+function readExtractionReviewForm(form,record){
       record.sourceType=form.elements.namedItem("sourceType").value;
       record.sourceLevel=form.elements.namedItem("sourceLevel").value;
       record.sourceUrl=form.elements.namedItem("recordSourceUrl").value.trim();
       record.targetProductId=form.elements.namedItem("targetProductId").value;
       record.notes=form.elements.namedItem("recordNotes").value.trim();
       form.querySelectorAll(".extract-field-row").forEach(row=>{
-        const path=row.dataset.fieldPath;
-        const type=row.dataset.fieldType;
+        const path=row.dataset.fieldPath,type=row.dataset.fieldType;
         let value=row.querySelector(".extract-value").value;
         if(type==="tri") value=triValue(value);
+        const previous=record.extractedFields[path]||blankFieldState(EXTRACTION_FIELDS.find(x=>x.path===path)||{});
         record.extractedFields[path]={
           value,
           evidence:row.querySelector(".extract-evidence").value.trim(),
           confidence:row.querySelector(".extract-confidence").value,
+          source:row.querySelector(".extract-source").value,
+          sourceDetails:previous.sourceDetails||"",
+          alternatives:Array.isArray(previous.alternatives)?previous.alternatives:[],
           needsConfirmation:row.querySelector(".extract-needs").checked,
           confirmed:row.querySelector(".extract-confirmed").checked
         };
@@ -1959,18 +2831,14 @@
         title:card.querySelector(".suggestion-title").value.trim(),
         description:card.querySelector(".suggestion-description").value.trim(),
         evidenceField:card.querySelector(".suggestion-evidence").value.trim(),
-        sourceUrl:record.sourceUrl,
-        confidence:"中",
-        confirmed:card.querySelector(".suggestion-confirmed").checked
+        sourceUrl:record.sourceUrl,confidence:"中",confirmed:card.querySelector(".suggestion-confirmed").checked
       }));
       record.suggestedCautions=[...form.querySelectorAll('[data-suggestion-type="caution"]')].map(card=>({
         title:card.querySelector(".suggestion-title").value.trim(),
         description:card.querySelector(".suggestion-description").value.trim(),
         severity:card.querySelector(".suggestion-severity").value,
         evidenceField:card.querySelector(".suggestion-evidence").value.trim(),
-        sourceUrl:record.sourceUrl,
-        confidence:"中",
-        confirmed:card.querySelector(".suggestion-confirmed").checked
+        sourceUrl:record.sourceUrl,confidence:"中",confirmed:card.querySelector(".suggestion-confirmed").checked
       }));
       return record;
     }
@@ -2080,7 +2948,7 @@
       render();
       toast("人工确认字段已写入产品库");
     }
-    async function createExtractionRecord(form){
+async function createExtractionRecord(form){
       const inputType=form.elements.namedItem("inputType").value;
       const sourceText=form.elements.namedItem("sourceText").value.trim();
       const sourceUrl=form.elements.namedItem("sourceUrl").value.trim();
@@ -2090,45 +2958,35 @@
       const notes=form.elements.namedItem("notes").value.trim();
       const fileInput=document.getElementById("evidenceImages");
       const files=[...(fileInput?.files||[])].slice(0,3);
-      if(!sourceText&&!files.length){
-        alert("请至少上传一张截图，或粘贴网页 / OCR 文本。");
-        return;
-      }
+      if(!sourceText&&!files.length){alert("请至少上传一张截图，或粘贴网页 / OCR 文本。");return;}
       const record=blankEvidenceRecord();
-      record.inputType=inputType;
-      record.sourceUrl=sourceUrl;
-      record.sourceType=sourceType;
-      record.sourceLevel=sourceLevel;
-      record.targetProductId=targetProductId;
-      record.notes=notes;
-      record.originalOcrText=sourceText;
-      record.inputSource.pastedText=sourceText;
-      record.inputSource.fileNames=files.map(x=>x.name);
+      record.inputType=inputType;record.sourceUrl=sourceUrl;record.sourceType=sourceType;record.sourceLevel=sourceLevel;record.targetProductId=targetProductId;record.notes=notes;
+      record.originalOcrText=sourceText;record.inputSource.pastedText=sourceText;record.inputSource.fileNames=files.map(x=>x.name);
+      let ai={fields:{},rawText:"",message:"文本规则抽取完成；AI 服务未调用。"};
       if(files.length){
         toast("正在压缩并保存图片证据…");
         record.inputSource.images=await Promise.all(files.map(compressImageFile));
-        const ai=await getAIExtraction({images:record.inputSource.images,text:sourceText,sourceUrl});
-        record.aiStatus=ai.message;
-      }else record.aiStatus="文本规则抽取完成；AI 服务未调用。";
+        ai=await getAIExtraction({images:record.inputSource.images,text:sourceText,sourceUrl});
+        record.aiStatus=ai.message;record.inputSource.aiOcrText=ai.rawText||"";
+      }else record.aiStatus=ai.message;
+      record.originalOcrText=mergeExtractionText(sourceText,ai.rawText);
+      let fields={};EXTRACTION_FIELDS.forEach(def=>fields[def.path]=blankFieldState(def));
       if(sourceText){
-        const result=ruleExtractText(sourceText,sourceUrl);
-        record.extractedFields=result.fields;
-        record.extractionResult=deepClone(result.fields);
-        record.suggestedAdvantages=result.suggestions.advantages;
-        record.suggestedCautions=result.suggestions.cautions;
+        const rule=ruleExtractText(sourceText,"","规则抽取");
+        fields=mergeCandidateFields(fields,rule.fields);
       }
-      state.evidenceRecords.unshift(normalizeEvidenceRecord(record));
-      state.extractionPrefill=null;
-      saveEvidenceRecords();
-      state.extractionId=record.evidenceId;
-      state.view="extractionReview";
-      render();
-      window.scrollTo({top:0,behavior:"smooth"});
-      toast("已生成待确认表单，尚未写入产品库");
+      if(sourceUrl) setExtractedField(fields,"sourceUrl",sourceUrl,sourceUrl,"高","人工填写");
+      if(ai.rawText){
+        const aiTextRule=ruleExtractText(ai.rawText,"","AI OCR");
+        fields=mergeCandidateFields(fields,aiTextRule.fields);
+      }
+      fields=mergeAIFields(fields,ai.fields);
+      record.extractedFields=fields;record.extractionResult=deepClone(fields);
+      const suggestions=generateSuggestions(fields);record.suggestedAdvantages=suggestions.advantages;record.suggestedCautions=suggestions.cautions;
+      state.evidenceRecords.unshift(normalizeEvidenceRecord(record));state.extractionPrefill=null;saveEvidenceRecords();
+      state.extractionId=record.evidenceId;state.view="extractionReview";render();window.scrollTo({top:0,behavior:"smooth"});
+      toast("已生成可追溯的待确认表单，尚未写入产品库");
     }
-
-
-
     function sourceLevelLegend(){
       const descriptions={S:"监管数据库、食品安全标准、官方公告",A:"品牌官网、产品标签、官方旗舰店详情",B:"电商渠道或新闻公告",C:"线下或人工记录",D:"用户评价、社媒、投诉平台"};
       return `<div class="source-legend">${SOURCE_LEVELS.map(x=>`<div><span class="level-pill level-${x}">${x}</span><br>${esc(descriptions[x])}</div>`).join("")}</div>`;
@@ -2185,6 +3043,104 @@
     function queueToExtraction(id){const x=state.updateQueue.find(i=>i.updateId===id);if(!x)return;x.auditStatus=x.auditStatus==="新发现"?"待确认":x.auditStatus;x.updatedAt=nowISO();saveUpdateQueue();state.extractionPrefill={text:x.rawText||x.summary,sourceUrl:x.sourceUrl,sourceType:x.sourceType==="电商旗舰店"?"官方旗舰店":x.sourceType,sourceLevel:x.sourceLevel,productId:x.productId,notes:`来自更新队列 ${x.updateId}：${x.summary}`};navigate("extraction");}
     function queueToEvent(id){const x=state.updateQueue.find(i=>i.updateId===id);if(!x)return;const e=blankQualityEvent();e.brand=x.brand;e.productId=x.productId;e.eventType=x.updateType==="召回信息"?"官方召回":x.updateType==="抽检信息"?"抽检不合格":x.updateType==="质量事件"?"其他":"其他";e.summary=x.summary;e.sourceUrl=x.sourceUrl;e.sourceLevel=x.sourceLevel;e.notes=`由更新队列 ${x.updateId} 转入，必须人工核实后才能发布。\n${x.rawText||""}`;state.qualityEvents.unshift(e);saveQualityEvents();x.auditStatus="待确认";x.updatedAt=nowISO();saveUpdateQueue();state.eventEditingId=e.eventId;navigate("qualityEventForm",{eventEditingId:e.eventId});}
     function queueToPrice(id){const x=state.updateQueue.find(i=>i.updateId===id);if(!x)return;if(!x.productId){alert("请先为更新项关联已有产品，再转为价格草稿。");return;}const prices=String(x.summary+" "+x.rawText).match(/(?:¥|￥)?\s*([0-9]+(?:\.[0-9]+)?)/g)||[];const spec=(String(x.summary+" "+x.rawText).match(/[0-9]+(?:\.[0-9]+)?\s*(?:g|kg|克)/i)||[])[0]||"";state.pendingPriceFromQueue=normalizePriceRecord({productId:x.productId,queueUpdateId:x.updateId,channel:x.sourceType,storeType:x.sourceType,specification:spec,salePrice:prices.length?prices[0].replace(/[^0-9.]/g,""):"",collectedAt:today(),sourceUrl:x.sourceUrl,notes:`由更新队列 ${x.updateId} 转入，保存前请人工核对。`,manuallyConfirmed:false});x.auditStatus="待确认";x.updatedAt=nowISO();saveUpdateQueue();navigate("form",{editingId:x.productId});}
+
+    function getStageAgeMismatch(product){
+      const stage=product.stage,text=String(product.ageRange||"");
+      const nums=(text.match(/\d+(?:\.\d+)?/g)||[]).map(Number);
+      if(!stage||stage==="其他"||!nums.length) return "";
+      const min=Math.min(...nums),max=Math.max(...nums);
+      if(stage==="1段"&&(min>=6||/6\s*(?:月龄)?以上|12\s*(?:月龄)?以上/.test(text))) return `1段与“${text}”明显不匹配`;
+      if(stage==="2段"&&(max<=6||min>=12)) return `2段与“${text}”明显不匹配`;
+      if(stage==="3段"&&(max<=12||(nums.length>1&&min<10))) return `3段与“${text}”明显不匹配`;
+      if(stage==="4段"&&min<24) return `4段与“${text}”明显不匹配`;
+      return "";
+    }
+    function validateDataConsistency(products=state.products){
+      const issues=[];
+      const add=(p,type,message,severity="warn")=>issues.push({productId:p.id,productName:p.productName||"未命名产品",type,message,severity});
+      products.forEach(p=>{
+        const registration=hasFilled(p.compliance?.formulaRegistrationNo)||hasFilled(p.compliance?.chinaRegistrationNo);
+        if(p.compliance?.verificationStatus==="verified"&&!registration) add(p,"合规","已核验但缺注册号。","danger");
+        if(p.reviewStatus==="已确认"&&(!hasIngredientTable(p)||!hasNutritionTable(p))) add(p,"公开资料","审核状态已确认，但配料表或营养表缺失。","danger");
+        if(p.ingredients?.manuallyConfirmed&&!hasFilled(p.ingredients?.sourceUrl)) add(p,"来源","原料标记为人工确认，但缺来源链接。");
+        if(p.nutrition?.manuallyConfirmed&&!hasFilled(p.nutrition?.sourceUrl)) add(p,"来源","营养标记为人工确认，但缺来源链接。");
+        if(hasFilled(p.compliance?.versionType)&&p.compliance.versionType!==p.versionType) add(p,"版本","产品版本类型与合规版本类型不一致。","danger");
+        const ageMismatch=getStageAgeMismatch(p);if(ageMismatch)add(p,"阶段月龄",ageMismatch+"。");
+        if(p.qualityEventReview?.status==="未检查"&&Number(p.scores?.qualitySafety?.score)>=13) add(p,"质量评分","质量事件未检查，但质量安全评分很高。","danger");
+        const scoreProblems=SCORE_DIMENSIONS.filter(d=>!hasFilled(p.scores?.[d.key]?.reason)||!p.scores?.[d.key]?.manuallyConfirmed).map(d=>d.label);
+        if(scoreProblems.length) add(p,"评分","评分理由缺失或未人工确认："+scoreProblems.join("、")+"。");
+        if(p.reviewStatus==="已确认"&&p.dataCompleteness<60) add(p,"公开准备","准备公开的产品资料完整度过低（"+p.dataCompleteness+"%）。","danger");
+      });
+      return issues;
+    }
+    function renderConsistencyResults(){
+      const results=state.consistencyResults;
+      if(results===null) return `<div class="muted">尚未运行校验。校验只显示问题，不会自动修改数据。</div>`;
+      if(!results.length) return `<div class="validation-empty"><b>未发现当前规则覆盖的一致性问题。</b><div class="tiny">仍建议在发布前人工抽查原始证据和公共导出文件。</div></div>`;
+      return `<div class="consistency-list">${results.map(issue=>`<div class="consistency-item ${esc(issue.severity)}"><div><h4>${esc(issue.productName)} · ${esc(issue.type)}</h4><div>${esc(issue.message)}</div><div class="consistency-meta">产品 ID：${esc(issue.productId)}</div></div><div class="actions"><button class="btn small" data-action="view-product" data-id="${esc(issue.productId)}">查看产品</button><button class="btn small primary" data-action="edit-product" data-id="${esc(issue.productId)}">编辑产品</button></div></div>`).join("")}</div>`;
+    }
+    function getPublicExclusionReasons(product){
+      const reasons=[];
+      if(product.reviewStatus!=="已确认") reasons.push(`审核状态为“${product.reviewStatus||"未设置"}”，不是“已确认”`);
+      return reasons;
+    }
+    function getPublicRiskReasons(product){
+      const risks=[];
+      if(Number(product.dataCompleteness)<60) risks.push(`资料完整度低（${product.dataCompleteness}%）`);
+      if(product.compliance?.verificationStatus!=="verified") risks.push(getComplianceLabel(product.compliance?.verificationStatus));
+      if(!hasIngredientTable(product)) risks.push("缺配料表");
+      if(!hasNutritionTable(product)) risks.push("缺营养表");
+      if(product.qualityEventReview?.status!=="已检查") risks.push("质量事件未检查");
+      return risks;
+    }
+    function getReleasePreview(){
+      const payload=buildPublicData(),publicIds=new Set(payload.products.map(p=>p.id));
+      const included=state.products.filter(p=>publicIds.has(p.id));
+      const excluded=state.products.filter(p=>!publicIds.has(p.id)).map(p=>({product:p,reasons:getPublicExclusionReasons(p)}));
+      const risks=included.map(product=>({product,risks:getPublicRiskReasons(product)})).filter(x=>x.risks.length);
+      return {payload,included,excluded,risks};
+    }
+    function renderReleaseProductTable(products){
+      if(!products.length) return `<div class="evidence-empty">当前没有符合公开条件的产品。</div>`;
+      return `<div class="release-table-wrap"><table class="release-table"><thead><tr><th>产品名</th><th>品牌</th><th>系列</th><th>阶段</th><th>版本类型</th><th>注册核验</th><th>审核状态</th><th>资料完整度</th></tr></thead><tbody>${products.map(p=>`<tr><td>${esc(p.productName||"未命名")}</td><td>${esc(p.brand||"未填写")}</td><td>${esc(p.series||"未填写")}</td><td>${esc(p.stage||"未填写")}</td><td>${esc(p.versionType||"未填写")}</td><td><span class="badge ${complianceClass(p.compliance?.verificationStatus)}">${esc(getComplianceLabel(p.compliance?.verificationStatus))}</span></td><td>${esc(p.reviewStatus||"未填写")}</td><td>${esc(p.dataCompleteness)}%（${esc(completenessLevel(p.dataCompleteness))}）</td></tr>`).join("")}</tbody></table></div>`;
+    }
+    function renderReleaseCheck(){
+      const preview=getReleasePreview();
+      return `${renderNotices()}<div class="page-head"><div><h2>发布前检查</h2><p>以下内容是即将生成的 public-data.json 预览。检查不会修改产品、事件或证据。</p></div><button class="btn" data-action="back-data">返回数据管理</button></div>
+      <div class="release-summary"><div class="release-stat"><b>${preview.payload.products.length}</b><span>将公开的产品</span></div><div class="release-stat"><b>${preview.payload.qualityEvents.length}</b><span>将公开的质量事件</span></div><div class="release-stat"><b>${preview.excluded.length}</b><span>不会公开的产品</span></div></div>
+      <section class="panel"><h3>公开产品列表预览</h3>${renderReleaseProductTable(preview.included)}</section>
+      <section class="panel"><h3>不会公开的产品及原因</h3>${preview.excluded.length?`<div class="release-risk-list">${preview.excluded.map(({product,reasons})=>`<div class="release-risk-item"><b>${esc(product.productName||"未命名产品")}</b><div class="tiny" style="margin-top:4px">${esc(reasons.join("；")||"不符合当前公共导出规则")}</div><div class="actions" style="margin-top:8px"><button class="btn small" data-action="view-product" data-id="${esc(product.id)}">查看产品</button><button class="btn small primary" data-action="edit-product" data-id="${esc(product.id)}">编辑产品</button></div></div>`).join("")}</div>`:'<div class="evidence-empty">当前所有可见产品都符合审核状态条件。</div>'}</section>
+      <section class="panel"><h3>公开风险提示</h3>${preview.risks.length?`<div class="release-risk-list">${preview.risks.map(({product,risks})=>`<div class="release-risk-item"><b>${esc(product.productName||"未命名产品")}</b><div class="tiny" style="margin-top:4px">${esc(risks.join("；"))}</div><div class="actions" style="margin-top:8px"><button class="btn small" data-action="view-product" data-id="${esc(product.id)}">查看产品</button><button class="btn small primary" data-action="edit-product" data-id="${esc(product.id)}">编辑产品</button></div></div>`).join("")}</div>`:'<div class="validation-empty"><b>未发现当前规则覆盖的发布风险项。</b></div>'}</section>
+      <section class="panel"><h3>明确不会公开的内部内容</h3><div class="private-boundary-list"><div>截图及 base64 原始证据、配料截图字段和本地 data:image 产品图。</div><div>EvidenceRecord、抽取历史、字段候选结果和关联证据 ID。</div><div>更新队列、用户反馈、未确认字段和未发布质量事件。</div><div>AI/OCR endpoint、model、API Key、提示词、字段别名映射及测试结果。</div></div></section>
+      <section class="panel"><label class="release-confirm"><input type="checkbox" id="publicExportConfirm"><span><b>我已检查以上公开产品、排除原因和风险提示。</b><br><span class="tiny">确认后只下载 public-data.json，不会修改当前本地数据。完整备份仍应仅用于私人备份，不要上传为公共文件。</span></span></label><div class="actions" style="margin-top:14px"><button class="btn" data-action="back-data">取消</button><button class="btn primary" data-action="confirm-public-export">确认并下载 public-data.json</button></div></section>`;
+    }
+    function renderFeedbackForm(){
+      const p=state.products.find(x=>x.id===state.feedbackProductId||x.id===state.detailId);
+      if(!p) return `<div class="empty"><h3>未找到产品</h3><button class="btn" data-action="back-list">返回资料库</button></div>`;
+      return `${renderNotices()}<div class="page-head"><div><h2>提交信息纠错 / 补充线索</h2><p>${esc(p.productName||"未命名产品")} · ${esc(p.brand||"未填写品牌")}</p></div><button class="btn" data-action="view-product" data-id="${esc(p.id)}">返回产品详情</button></div><section class="panel feedback-card"><div class="feedback-intro"><b>反馈不会直接修改产品。</b><div class="tiny" style="margin-top:5px">提交后进入现有更新队列，标记为“待确认”，需要维护者审核后才能转为抽取记录、质量事件或价格记录，且不会自动进入 public-data.json。</div></div><form id="productFeedbackForm" data-product-id="${esc(p.id)}"><div class="form-grid"><div class="field"><label>反馈类型</label><select name="feedbackType" required><option value="信息有误">信息有误</option><option value="补充来源">补充来源</option><option value="价格线索">价格线索</option><option value="质量事件线索">质量事件线索</option><option value="其他">其他</option></select></div><div class="field"><label>联系方式（可选）</label><input name="contact" placeholder="邮箱、微信或其他联系方式"></div><div class="field span-4"><label>说明</label><textarea name="description" required style="min-height:130px" placeholder="请说明需要纠正或补充的内容。不要填写不必要的敏感个人信息。"></textarea></div><div class="field span-4"><label>来源链接（可选）</label><input type="url" name="sourceUrl" placeholder="https://"></div></div><div class="save-bar"><div><b>提交状态：待审核</b><div class="tiny muted">不会自动公开，也不会覆盖当前产品资料。</div></div><div class="actions"><button type="button" class="btn" data-action="view-product" data-id="${esc(p.id)}">取消</button><button type="submit" class="btn primary">提交到更新队列</button></div></div></form></section>`;
+    }
+    function handleFeedbackSubmit(form){
+      const p=state.products.find(x=>x.id===form.dataset.productId);
+      if(!p){alert("未找到关联产品。");return;}
+      const feedbackType=readPath(form,"feedbackType"),description=readPath(form,"description"),sourceUrl=readPath(form,"sourceUrl"),contact=readPath(form,"contact");
+      if(!description){alert("请填写反馈说明。");return;}
+      const typeMap={"信息有误":"信息纠错","补充来源":"其他","价格线索":"新价格","质量事件线索":"质量事件","其他":"其他"};
+      const item=normalizeUpdateQueueItem({
+        sourceType:"人工记录",sourceLevel:"D",sourceUrl,brand:p.brand,productName:p.productName,
+        updateType:typeMap[feedbackType]||"其他",summary:`用户反馈（${feedbackType}）：${description.slice(0,180)}`,
+        confidence:"低",auditStatus:"待确认",productId:p.id,rawText:description,
+        extractionResult:{feedbackType,submittedFrom:"product-detail",contactProvided:!!contact},
+        notes:`用户提交的信息纠错/补充线索；待维护者审核，不得自动公开。${contact?`
+联系方式（可选）：${contact}`:""}`
+      });
+      state.updateQueue.unshift(item);saveUpdateQueue();state.detailId=p.id;navigate("detail",{detailId:p.id});toast("反馈已进入更新队列，状态为待确认");
+    }
+
+    function renderAISettingsPage(){
+      return `${renderNotices()}<div class="page-head"><div><h2>AI / OCR 设置</h2><p>此设置属于辅助维护功能，不是录入主流程的必需步骤。</p></div><button class="btn" data-action="back-list">返回资料库</button></div>
+      <section class="panel"><div class="pending-banner">未启用或未配置时，上传图片只保存原始证据，不会伪造 OCR。测试连接不会写入产品库或创建 EvidenceRecord；接口返回字段仍必须人工确认后才可入库。</div>${renderAIConfigDetails(true)}</section>`;
+    }
+
     function renderData(){
       const payload={products:state.products,evidenceRecords:state.evidenceRecords,qualityEvents:state.qualityEvents,updateQueue:state.updateQueue};
       const bytes=new Blob([JSON.stringify(payload)]).size;
@@ -2208,12 +3164,19 @@
           <div class="public-status-card"><b>${state.publicData.publishedAt?formatDate(state.publicData.publishedAt):"未记录"}</b><div class="tiny">公共数据发布时间</div></div>
         </div>
       </section>
+      <section class="panel">
+        <div class="panel-title"><div><h3>数据一致性校验</h3><div class="tiny muted">只检查并列出问题，不会直接修改任何产品。</div></div><button class="btn primary" data-action="run-data-validation">一键校验数据一致性</button></div>
+        ${renderConsistencyResults()}
+      </section>
       <div class="data-actions">
-        <div class="data-action-card"><h3>导出完整备份</h3><p class="muted">包含产品、截图证据、更新队列和所有审核状态，仅用于你自己的备份与迁移。</p><button class="btn primary" data-action="export">导出完整备份</button></div>
-        <div class="data-action-card"><h3>导出公共数据</h3><p class="muted">只导出“已确认”产品、人工确认的优势/注意事项/价格，以及允许公开的已发布质量事件。</p><button class="btn primary" data-action="export-public">导出 public-data.json</button><div class="origin-note">当前预计发布 ${publicPreview.products.length} 款产品、${publicPreview.qualityEvents.length} 条质量事件。</div></div>
+        <div class="data-action-card"><h3>导出完整备份</h3><p class="muted">包含产品、截图证据、更新队列和所有审核状态，仅用于你自己的备份与迁移。<b>不要把完整备份作为公共文件发布。</b></p><button class="btn primary" data-action="export">导出完整备份</button></div>
+        <div class="data-action-card"><h3>导出公共数据</h3><p class="muted">只导出“已确认”产品、人工确认的优势/注意事项/价格，以及允许公开的已发布质量事件。</p><button class="btn primary" data-action="export-public">进入发布前检查</button><div class="origin-note">当前预计发布 ${publicPreview.products.length} 款产品、${publicPreview.qualityEvents.length} 条质量事件。</div></div>
         <div class="data-action-card"><h3>导入完整备份</h3><p class="muted">兼容旧版产品数组及旧内嵌质量事件。导入内容作为本地工作资料，不会自动公开。</p><button class="btn primary" data-action="import">选择文件</button></div>
         <div class="data-action-card"><h3>虚构测试数据</h3><p class="muted">载入 5 款明确标注“示例数据非真实推荐”的产品及测试事件。</p><button class="btn soft" data-action="load-demo">载入测试样例</button></div>
       </div>
+      <section class="panel" style="margin-top:16px">
+        <div class="panel-title"><div><h3>AI / OCR 辅助设置</h3><p class="muted">设置只保存在本浏览器，不会写入 public-data.json。</p></div><button class="btn soft" data-action="open-ai-settings">打开设置</button></div>
+      </section>
       <section class="panel" style="margin-top:16px">
         <h3>推荐发布流程</h3>
         <div class="deployment-steps">
@@ -2226,7 +3189,7 @@
       </section>
       <section class="panel"><h3>公开与私有数据边界</h3>
         <p><b>会进入 public-data.json：</b>审核状态为“已确认”的产品、人工确认的优势和注意事项、人工确认价格，以及审核状态为“已发布”的质量事件。</p>
-        <p><b>不会进入 public-data.json：</b>截图/base64 原始证据、EvidenceRecord、抽取历史、更新队列、未确认字段、未发布质量事件。这样可降低误公开草稿或高风险信息的可能。</p>
+        <p><b>不会进入 public-data.json：</b>截图/base64 原始证据、EvidenceRecord、抽取历史、更新队列、用户反馈、未确认字段、未发布质量事件、AI/OCR 设置和字段别名映射。这样可降低误公开草稿或高风险信息的可能。</p>
         <button class="btn danger" data-action="clear-local-layer">清除本浏览器的产品/事件本地覆盖</button>
         <div class="tiny muted" style="margin-top:7px">此操作不会删除 Cloudflare 上的 public-data.json，也不会清除抽取证据和更新队列。</div>
       </section>
@@ -2365,7 +3328,7 @@
     function exportData(){
       const payload={app:"Baby Formula Guide",schemaVersion:5,dataType:"full-backup",exportedAt:nowISO(),disclaimer:"公开资料整理与初筛，不构成医疗建议。AI/OCR 与更新队列只辅助人工确认，不自动发布。",products:state.products.map(stripRuntimeFields),evidenceRecords:state.evidenceRecords,qualityEvents:state.qualityEvents.map(stripRuntimeFields),updateQueue:state.updateQueue};
       downloadJson(payload,`baby-formula-guide-v5-full-backup-${today()}.json`);
-      toast("完整 JSON 备份已导出");
+      toast("完整 JSON 备份已导出；请勿作为公共文件发布");
     }
     async function importData(file){
       try{
@@ -2409,18 +3372,26 @@
 
     app.addEventListener("submit",e=>{
       if(e.target.id==="productForm"){e.preventDefault();handleSubmit(e.target);}
+      else if(e.target.id==="copyProductForm"){e.preventDefault();handleCopyProductSubmit(e.target);}
       else if(e.target.id==="extractionInputForm"){e.preventDefault();createExtractionRecord(e.target);}
       else if(e.target.id==="extractionReviewForm"){e.preventDefault();confirmExtraction(e.target);}
       else if(e.target.id==="qualityEventForm"){e.preventDefault();handleQualityEventSubmit(e.target);}
       else if(e.target.id==="updateQueueForm"){e.preventDefault();handleUpdateQueueSubmit(e.target);}
+      else if(e.target.id==="productFeedbackForm"){e.preventDefault();handleFeedbackSubmit(e.target);}
     });
     app.addEventListener("input",e=>{
+      if(e.target.closest("#productForm")){clearTimeout(state._healthTimer);state._healthTimer=setTimeout(updateProductHealthPreview,120);}
       if(e.target.matches("[data-filter]")){
         state.filters[e.target.dataset.filter]=e.target.value;
         if(e.target.dataset.filter==="query"){ clearTimeout(state._filterTimer); state._filterTimer=setTimeout(render,180); }
       }
     });
     app.addEventListener("change",e=>{
+      if(e.target.closest("#productForm")) updateProductHealthPreview();
+      if(e.target.matches(".extract-value")){
+        const row=e.target.closest(".extract-field-row"),source=row?.querySelector(".extract-source");
+        if(source) source.value="人工填写";
+      }
       if(e.target.id==="sourceTypeSelect"){
         const level=document.getElementById("sourceLevelSelect");if(level) level.value=getSourceLevel(e.target.value);
       }
@@ -2473,6 +3444,12 @@
       else if(action==="back-list"){navigate("list");}
       else if(action==="view-product"){navigate("detail",{detailId:id});}
       else if(action==="edit-product"){navigate("form",{editingId:id});}
+      else if(action==="copy-product"){navigate("copy",{copySourceId:id});}
+      else if(action==="product-feedback"){navigate("feedback",{feedbackProductId:id});}
+      else if(action==="back-data"){navigate("data");}
+      else if(action==="confirm-public-export"){confirmPublicDataExport();}
+      else if(action==="run-data-validation"){state.consistencyResults=validateDataConsistency();render();toast(`校验完成：发现 ${state.consistencyResults.length} 项问题`);}
+      else if(action==="open-ai-settings"){navigate("aiSettings");}
       else if(action==="delete-product"){
         const p=state.products.find(x=>x.id===id);
         const message=p?.dataOrigin==="public"
@@ -2537,6 +3514,20 @@
           localStorage.removeItem(HIDDEN_PUBLIC_EVENTS_KEY);
           state.hiddenPublicProductIds=[];state.hiddenPublicEventIds=[];
           loadPublicData();toast("本地覆盖已清除");
+        }
+      }
+      else if(action==="save-ai-config"){
+        saveAIConfigFromPanel(btn.closest("[data-ai-config-panel]"));
+      }
+      else if(action==="test-ai-connection"){
+        testAIConnectionFromPanel(btn);
+      }
+      else if(action==="reset-ai-config"){
+        if(confirm("确定清空本浏览器保存的 AI/OCR 接入设置吗？")){
+          localStorage.removeItem(AI_CONFIG_STORAGE_KEY);
+          state.aiConfig=defaultAIConfig();
+          render();
+          toast("AI / OCR 设置已清空");
         }
       }
       else if(action==="import"){importFile.click();}
