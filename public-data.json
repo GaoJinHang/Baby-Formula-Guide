@@ -1,0 +1,9 @@
+{
+  "app": "Baby Formula Guide",
+  "schemaVersion": 5,
+  "dataType": "public-seed",
+  "publishedAt": "",
+  "disclaimer": "公开资料整理与初筛，不构成医疗建议。请在网页的数据管理页导出正式 public-data.json 后覆盖本文件。",
+  "products": [],
+  "qualityEvents": []
+}
